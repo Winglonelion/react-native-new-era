@@ -1,0 +1,11 @@
+
+ios/*
+android/*
+coverage/*
+build/*
+node_modules/*
+package-lock.json
+yarn.lock
+bitrise.yml
+*.md
+jsconfig.json
