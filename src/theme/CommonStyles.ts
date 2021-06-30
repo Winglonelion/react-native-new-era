@@ -7,7 +7,6 @@ const CommonStyles = {
 
   container: {
     flex: 1,
-    paddingTop: CommonHeights.res20,
     backgroundColor: Colors.white,
   } as ViewStyle,
 
@@ -18,6 +17,8 @@ const CommonStyles = {
     justifyContent: 'center',
     alignItems: 'center',
   } as ViewStyle,
+
+  alignCenter: { alignItems: 'center' } as ViewStyle,
 
   activityIndicator: {
     marginVertical: CommonHeights.res5,

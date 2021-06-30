@@ -2,7 +2,7 @@ import { responsiveFontSize } from 'utils/screen';
 import Platform from 'utils/platform';
 
 export const FontFamily = {
-  GE_Thameen: Platform.isIos ? 'GE Thameen' : 'GE_Thameen_Book',
+  Helvetica: Platform.isIos ? 'Helvetica Neue' : 'Helvetica_Neue',
   System: 'System',
 };
 

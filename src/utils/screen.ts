@@ -4,7 +4,7 @@ import Platform from './platform';
 const { width, height } = Dimensions.get('window');
 const [shortDimension, longDimension] =
   width < height ? [width, height] : [height, width];
-const STANDARD_WINDOW = { width: 375, height: 667 };
+const STANDARD_WINDOW = { width: 375, height: 812 };
 
 const STATUS_BAR_HEIGHT = Platform.isIos ? 34 : StatusBar.currentHeight;
 const isLargeView = shortDimension >= 600;
