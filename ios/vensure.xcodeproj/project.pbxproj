@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3D471F56268C3A1200EF3B00 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D471F55268C3A1200EF3B00 /* BootSplash.storyboard */; };
 		60667CB027AF866587660BC2 /* libPods-vensure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C900FD30DD7E85B58E50DE4 /* libPods-vensure.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D9308736A1267DCA07166E78 /* libPods-vensure-vensureTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE39CA7AB1C5B1C26EDCA5EA /* libPods-vensure-vensureTests.a */; };
@@ -37,6 +38,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = vensure/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = vensure/main.m; sourceTree = "<group>"; };
 		3514E0536DC1009F9B9892D0 /* Pods-vensure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure.release.xcconfig"; path = "Target Support Files/Pods-vensure/Pods-vensure.release.xcconfig"; sourceTree = "<group>"; };
+		3D471F55268C3A1200EF3B00 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = vensure/BootSplash.storyboard; sourceTree = "<group>"; };
 		5C900FD30DD7E85B58E50DE4 /* libPods-vensure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vensure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = vensure/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98A25C44E813ACE044C8DC1C /* Pods-vensure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure.debug.xcconfig"; path = "Target Support Files/Pods-vensure/Pods-vensure.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				3D471F55268C3A1200EF3B00 /* BootSplash.storyboard */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -242,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D471F56268C3A1200EF3B00 /* BootSplash.storyboard in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

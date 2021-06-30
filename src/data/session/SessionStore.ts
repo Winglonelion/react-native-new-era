@@ -1,3 +1,13 @@
+/**
+ * MOBX domain store for user's session
+ *
+ * @summary mobx domain state store for user's session
+ * @author Thuan <nguyenbuiducthuan@gmail.com>
+ *
+ * Created at     : 2021-06-30 11:25:17
+ * Last modified  : 2021-06-30 11:47:14
+ */
+
 import { makeObservable, observable, computed, action, flow } from 'mobx';
 export class SessionStore {
   access_token: string = '';
@@ -34,5 +44,8 @@ export class SessionStore {
 
   *logout() {}
 }
+/**
+ * @instance store session info of a user.
+ */
 const sessionStore = new SessionStore();
 export default sessionStore;

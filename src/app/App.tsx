@@ -8,17 +8,22 @@
  * Last modified  : 2021-06-29 17:37:56
  */
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
-
+import RNBootSplash from 'react-native-bootsplash';
 import { NavigationContainer } from '@react-navigation/native';
+
 import RootStack from '../routes/stacks/RootStack';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
+  const onNavigationReady = useCallback(() => {
+    RNBootSplash.hide({ fade: true });
+  }, []);
+
   return (
-    <NavigationContainer>
+    <NavigationContainer onReady={onNavigationReady}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <RootStack />
     </NavigationContainer>
