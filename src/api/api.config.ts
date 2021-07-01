@@ -1,7 +1,7 @@
 import { HTTP_ERROR_CODES } from 'constants/http-errors';
 import { doNothing } from 'constants/default-values';
 import ApiErrorHandler from 'utils/error-handler/api';
-import { SERVERS } from 'constants/servers';
+import { SERVERS } from './api.servers';
 import Axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import Platform from 'utils/platform';
 import HttpException from 'utils/error-handler/error';

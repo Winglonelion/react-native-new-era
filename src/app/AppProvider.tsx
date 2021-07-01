@@ -12,7 +12,7 @@ import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import App from './App';
-import SetupAPI from 'api/config';
+import SetupAPI from 'api/api.config';
 import ErrorBoundary from './ErrorBoundary';
 
 class AppProvider extends React.PureComponent {
