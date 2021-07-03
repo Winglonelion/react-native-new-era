@@ -5,16 +5,23 @@
  * @author Thuan <nguyenbuiducthuan@gmail.com>
  *
  * Created at     : 2021-06-30 11:25:17
- * Last modified  : 2021-06-30 11:47:14
+ * Last modified  : 2021-07-02 03:44:16
  */
 
+import SessionAPI from 'api/session/session.api';
+import { LoginResponse } from 'api/session/session.api.types';
+import { AxiosResponse } from 'axios';
+import { SESSION_STATUS } from 'constants/session';
+import userProfileStore from 'data/user/UserProfileStore';
 import { makeObservable, observable, computed, action, flow } from 'mobx';
 export class SessionStore {
   access_token: string = '';
+  session_status: string = SESSION_STATUS.UNAUTHORIZED;
 
   constructor() {
     makeObservable(this, {
       access_token: observable,
+      session_status: observable,
       isAuthorized: computed,
       login: flow,
       logout: flow,
@@ -36,10 +43,39 @@ export class SessionStore {
   }
 
   get isAuthorized() {
-    return !!this.access_token;
+    return this.session_status === SESSION_STATUS.AUTHORIZED;
   }
 
-  *login() {}
+  *login() {
+    if (this.session_status !== SESSION_STATUS.UNAUTHORIZED) {
+      console.warn('logged in');
+      return;
+    }
+    this.session_status = SESSION_STATUS.AUTHORIZING;
+    try {
+      const response: AxiosResponse<LoginResponse> = yield SessionAPI.login({
+        email: 'nguyenbuiducthuan@gmail.com',
+        password: 'password',
+      });
+      const {
+        data: { access_token },
+      } = response;
+      this.access_token = access_token;
+      userProfileStore.setUser({
+        full_name: 'Tony Stark',
+        birthday: '08/09/1993',
+        ethnicity: 'Egypth',
+        is_new_user: true,
+        nickname: 'Bad Boyz',
+        date_married: '30/03/2021',
+        marital_status: 'married',
+      });
+      this.session_status = SESSION_STATUS.AUTHORIZED;
+      console.log('login complete', { access_token });
+    } catch (error) {
+      this.session_status = SESSION_STATUS.UNAUTHORIZED;
+    }
+  }
   *authenticate() {}
 
   *logout() {}
