@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  extends: ['@react-native-community', 'prettier'],
+  plugins: ['prettier'],
   env: {
     // browser: true,
     // es2020: true,
