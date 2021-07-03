@@ -1,7 +1,8 @@
 import React from 'react';
 import { SafeAreaView, View, Image } from 'react-native';
+import { observer } from 'mobx-react';
 
-import Colors from 'utils/colors';
+import Colors from 'theme/colors';
 import Space from 'components/Base/Space';
 import Button from 'components/Base/Button';
 import CommonStyles from 'theme/CommonStyles';
@@ -16,7 +17,7 @@ import useLogic from './LoginScreen.logic';
 type PropTypes = {};
 
 const LoginScreen: React.FC<PropTypes> = () => {
-  const { onPressLogin } = useLogic();
+  const { loading, onPressLogin } = useLogic();
   return (
     <View style={CommonStyles.container}>
       <SafeAreaView style={[CommonStyles.flex1, CommonStyles.alignCenter]}>
@@ -37,7 +38,13 @@ const LoginScreen: React.FC<PropTypes> = () => {
             {messages.login_content}
           </ContentText>
           <View style={styles.buttonContainer}>
-            <Button round text={messages.button_text} onPress={onPressLogin} />
+            <Button
+              round
+              hideContentWhileLoading
+              text={messages.button_text}
+              onPress={onPressLogin}
+              loading={loading}
+            />
             <Image
               style={styles.upArrowImage}
               source={require('images/up.png')}
@@ -49,4 +56,4 @@ const LoginScreen: React.FC<PropTypes> = () => {
   );
 };
 
-export default LoginScreen;
+export default observer(LoginScreen);

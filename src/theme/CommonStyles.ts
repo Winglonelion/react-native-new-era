@@ -1,5 +1,5 @@
 import { StyleSheet, ViewStyle } from 'react-native';
-import Colors from 'utils/colors';
+import Colors from 'theme/colors';
 import CommonHeights from './CommonHeights';
 
 const CommonStyles = {
@@ -30,6 +30,10 @@ const CommonStyles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  } as ViewStyle,
+
+  row: {
+    flexDirection: 'row',
   } as ViewStyle,
 };
 

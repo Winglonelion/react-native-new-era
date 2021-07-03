@@ -5,8 +5,8 @@ import { observer } from 'mobx-react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import ROUTES from '../names';
-import AuthorizedStack from './AuthorizedStack';
 import UnAuthorizedStack from './UnAuthorizedStack';
+import MainDrawer from 'routes/drawer/MainDrawer';
 
 export interface RootStackParamsList extends ParamListBase {
   LOGIN: undefined;
@@ -24,10 +24,7 @@ const RootStack = () => {
         gestureEnabled: true,
       }}>
       {sessionStore.isAuthorized && (
-        <Stack.Screen
-          name={ROUTES.AUTHORIZED_STACK}
-          component={AuthorizedStack}
-        />
+        <Stack.Screen name={ROUTES.MAIN_DRAWER} component={MainDrawer} />
       )}
 
       {!sessionStore.isAuthorized && (
