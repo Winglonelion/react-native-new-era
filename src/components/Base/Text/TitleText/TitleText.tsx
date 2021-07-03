@@ -7,7 +7,7 @@ import {
   TextStyle,
 } from 'react-native';
 import { FontFamily } from 'theme/CommonFonts';
-import Colors from 'utils/colors';
+import Colors from 'theme/colors';
 
 interface PropTypes extends TextProps {
   level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

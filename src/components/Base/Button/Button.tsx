@@ -1,8 +1,8 @@
 import TitleText from 'components/Base/Text/TitleText';
 import React, { memo } from 'react';
 import { ColorValue, GestureResponderEvent, ViewStyle } from 'react-native';
-import { StyleSheet, Pressable } from 'react-native';
-import Colors from 'utils/colors';
+import { StyleSheet, Pressable, ActivityIndicator } from 'react-native';
+import Colors from 'theme/colors';
 
 interface PropTypes {
   loading?: boolean;
@@ -30,7 +30,7 @@ const Button: React.FC<PropTypes> = memo(
     return (
       <Pressable
         onPress={onPress}
-        disabled={disabled}
+        disabled={disabled || loading}
         style={[
           styles.buttonView,
           round && styles.buttonRoundView,
@@ -40,6 +40,7 @@ const Button: React.FC<PropTypes> = memo(
         {text && !isHideContent && (
           <TitleText style={styles.buttonText}>{text}</TitleText>
         )}
+        {loading && <ActivityIndicator color={Colors.white} />}
       </Pressable>
     );
   },

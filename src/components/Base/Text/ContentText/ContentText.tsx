@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { ColorValue, StyleSheet, Text, TextProps } from 'react-native';
 import { FontFamily } from 'theme/CommonFonts';
-import Colors from 'utils/colors';
+import Colors from 'theme/colors';
 
 interface PropTypes extends TextProps {
   color?: ColorValue;
