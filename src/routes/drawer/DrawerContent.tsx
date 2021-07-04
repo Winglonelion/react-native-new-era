@@ -1,16 +1,17 @@
 import React, { useCallback } from 'react';
-
-import { StyleSheet, SafeAreaView, Image } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   DrawerContentScrollView,
   DrawerItem,
   DrawerContentComponentProps,
 } from '@react-navigation/drawer';
+
+import Screen from 'utils/screen';
 import ROUTES from 'routes/names';
-import messages from './DrawerContent.messages';
 import Colors from 'theme/colors';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
-import Screen from 'utils/screen';
+import messages from './DrawerContent.messages';
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   const navigation = useNavigation();
@@ -66,7 +67,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         />
         <DrawerItem
           style={{
-            bottom: -Screen.height * 0.62,
+            bottom: -Screen.height * 0.5,
           }}
           label={'Close Drawer'}
           labelStyle={[styles.text, styles.closeDrawerButton]}

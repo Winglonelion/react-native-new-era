@@ -1,10 +1,7 @@
 import React from 'react';
-import { ParamListBase } from '@react-navigation/routers';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import ROUTES from 'routes/names';
 import LoginScreen from 'screens/LoginScreen';
-
-export interface RootStackParamsList extends ParamListBase {}
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 

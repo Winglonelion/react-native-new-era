@@ -1,5 +1,4 @@
 import React from 'react';
-import { ParamListBase } from '@react-navigation/routers';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import MainTab from 'routes/tabs/MainTab';
@@ -8,8 +7,8 @@ import ROUTES, { ROUTE_TABS } from 'routes/names';
 import OnboardingScreen from 'screens/OnboardingScreen';
 import { observer } from 'mobx-react';
 import userProfileStore from 'data/user/UserProfileStore';
-
-export interface RootStackParamsList extends ParamListBase {}
+import SettingScreen from 'screens/SettingScreen/SettingScreen';
+import FeedbackScreen from 'screens/FeedbackScreen/FeedbackScreen';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
@@ -25,7 +24,7 @@ const AuthorizedStack = () => {
         gestureEnabled: false,
       }}>
       <Stack.Screen
-        options={{}}
+        options={{ headerShown: false }}
         name={ROUTES.ONBOARDING_SCREEN}
         component={OnboardingScreen}
       />
@@ -34,6 +33,8 @@ const AuthorizedStack = () => {
         name={ROUTE_TABS.MAIN_TAB}
         component={MainTab}
       />
+      <Stack.Screen name={ROUTES.SETTING_SCREEN} component={SettingScreen} />
+      <Stack.Screen name={ROUTES.FEEDBACK_SCREEN} component={FeedbackScreen} />
     </Stack.Navigator>
   );
 };

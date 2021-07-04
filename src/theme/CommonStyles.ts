@@ -35,6 +35,12 @@ const CommonStyles = {
   row: {
     flexDirection: 'row',
   } as ViewStyle,
+  shadow: {
+    shadowColor: Colors.shadow,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 2,
+    shadowOpacity: 1,
+  } as ViewStyle,
 };
 
 export default CommonStyles;

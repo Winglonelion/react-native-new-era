@@ -1,6 +1,7 @@
 import React from 'react';
-import { SafeAreaView, View, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { observer } from 'mobx-react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Colors from 'theme/colors';
 import Space from 'components/Base/Space';
@@ -10,9 +11,9 @@ import TitleText from 'components/Base/Text/TitleText';
 import ContentText from 'components/Base/Text/ContentText';
 import OnboardingImage from 'components/Theme/Image/OnboardingImage';
 
-import messages from './LoginScreen.messages';
 import styles from './LoginScreen.styles';
 import useLogic from './LoginScreen.logic';
+import messages from './LoginScreen.messages';
 
 type PropTypes = {};
 

@@ -3,20 +3,21 @@ import {
   FlatList,
   NativeScrollEvent,
   NativeSyntheticEvent,
-  SafeAreaView,
   View,
 } from 'react-native';
 import { v4 as uuidv4 } from 'uuid';
-
-import CommonStyles from 'theme/CommonStyles';
-import styles from './OnboardingScreen.styles';
-import OnboardingItem from './components/OnboardingItem';
-import { keyExtractor } from 'constants/default-values';
-import Screen from 'utils/screen';
-import useLogic from './OnboardingScreen.logic';
-import OnboardingActionControl from './components/OnboardingActionControl';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+
+import Screen from 'utils/screen';
 import { ROUTE_TABS } from 'routes/names';
+import CommonStyles from 'theme/CommonStyles';
+import { keyExtractor } from 'constants/default-values';
+
+import styles from './OnboardingScreen.styles';
+import useLogic from './OnboardingScreen.logic';
+import OnboardingItem from './components/OnboardingItem';
+import OnboardingActionControl from './components/OnboardingActionControl';
 
 type PropTypes = {};
 

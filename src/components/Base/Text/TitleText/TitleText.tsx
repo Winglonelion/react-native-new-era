@@ -9,7 +9,7 @@ import {
 import { FontFamily } from 'theme/CommonFonts';
 import Colors from 'theme/colors';
 
-interface PropTypes extends TextProps {
+export interface TitleTextPropTypes extends TextProps {
   level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   color?: ColorValue;
 }
@@ -23,7 +23,7 @@ const LEVEL_STYLES: Record<string, TextStyle> = {
   h6: { fontSize: 10, lineHeight: 16, letterSpacing: 0.1, fontWeight: '500' },
 };
 
-const TitleText: React.FC<PropTypes> = memo(
+const TitleText: React.FC<TitleTextPropTypes> = memo(
   ({ children, level = 'h4', style, color }) => {
     return (
       <Text
