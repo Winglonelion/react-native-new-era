@@ -1,7 +1,7 @@
 import { isNavigationReady, navigationRef } from 'app/Navigation.ref';
 import { DrawerActions } from '@react-navigation/native';
 
-export function navigate(name: string, params: Object) {
+export function navigateTo(name: string, params?: Object) {
   if (isNavigationReady() && navigationRef.current) {
     // Perform navigation if the app has mounted
     navigationRef.current.navigate(name, params);

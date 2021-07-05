@@ -1,114 +1,95 @@
-import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import React, { memo } from 'react';
+import { View, StyleSheet } from 'react-native';
 import TitleText from 'components/Base/Text/TitleText/TitleText';
 import messages from './SalaryOverview.messages';
 import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
 import PieChart from 'components/Common/Chart/PieChart';
+import ContentLoaderLine from 'components/Base/ContentLoader/BuildIn/ContentLoaderLine';
+import MoneyValue from 'components/Base/Text/MoneyValue/MoneyValue';
+import ContentLoaderCircle from 'components/Base/ContentLoader/BuildIn/ContentLoaderCircle';
 
-const keys = ['google', 'facebook', 'linkedin', 'youtube', 'Twitter'];
-const values = [15, 12, 35, 45, 55];
-const colors = ['#6C6F70', '#E28080', '#C0CAB8', '#4FA5AD', '#FF894D'];
+interface PropTypes {
+  data?: {
+    take_home: number;
+    hours: number;
+    gross: number;
+    rate: number;
+    dataChart: any[];
+  };
+  loading?: boolean;
+}
 
-const SalaryOverview = () => {
-  const data = keys.map((key, index) => {
-    return {
-      key,
-      value: values[index],
-      svg: { fill: colors[index] },
-      // arc: {
-      //   outerRadius: 70 + values[index] + '%',
-      //   // padAngle: label === key ? 0.1 : 0,
-      // },
-      // onPress: () =>
-      //   this.setState({ selectedSlice: { label: key, value: values[index] } }),
-    };
-  });
-
+const SalaryOverview: React.FC<PropTypes> = memo(({ data, loading }) => {
   return (
-    <View style={styles.shadowBox}>
-      <View style={styles.container}>
-        {/* title row */}
-        <View style={styles.titleRow}>
-          <TitleText level="h2">{messages.pay}</TitleText>
-          <Image
-            source={require('images/chevron_right_brown.png')}
-            style={styles.icon}
-          />
+    <View style={styles.contentRow}>
+      <View style={CommonStyles.flex1}>
+        {/* take home */}
+        <View style={styles.dataRow}>
+          <TitleText level="h5" color={Colors.lightBrown}>
+            {messages.take_home}
+          </TitleText>
+          <ContentLoaderLine ready={!loading} width={150} height={30}>
+            <TitleText level="h1">
+              <MoneyValue value={data?.take_home} />
+            </TitleText>
+          </ContentLoaderLine>
         </View>
-        {/* content row */}
-        <View style={styles.contentRow}>
+        {/* gross */}
+        <View style={styles.dataRow}>
+          <TitleText level="h5" color={Colors.lightBrown}>
+            {messages.gross}
+          </TitleText>
+          <ContentLoaderLine ready={!loading} width={150} height={22}>
+            <TitleText level="h3">
+              <MoneyValue value={data?.gross} />
+            </TitleText>
+          </ContentLoaderLine>
+        </View>
+        <View style={[styles.dataRow, CommonStyles.row]}>
           <View style={CommonStyles.flex1}>
-            {/* take home */}
-            <View style={styles.dataRow}>
-              <TitleText level="h5" color={Colors.lightBrown}>
-                {messages.take_home}
-              </TitleText>
-              <TitleText level="h1">{'$1,800.01'}</TitleText>
-            </View>
-            {/* gross */}
-            <View style={styles.dataRow}>
-              <TitleText level="h5" color={Colors.lightBrown}>
-                {messages.gross}
-              </TitleText>
-              <TitleText level="h3">{'$2400.00'}</TitleText>
-            </View>
-            <View style={[styles.dataRow, CommonStyles.row]}>
-              <View style={CommonStyles.flex1}>
-                {/* hours */}
-                <TitleText level="h5" color={Colors.lightBrown}>
-                  {messages.hours}
-                </TitleText>
-                <TitleText level="h3">{'80.00'}</TitleText>
-              </View>
-              <View style={CommonStyles.flex1}>
-                {/* rate */}
-                <TitleText level="h5" color={Colors.lightBrown}>
-                  {messages.rate}
-                </TitleText>
-                <TitleText level="h3">{'$30.00'}</TitleText>
-              </View>
-            </View>
+            {/* hours */}
+            <TitleText level="h5" color={Colors.lightBrown}>
+              {messages.hours}
+            </TitleText>
+            <ContentLoaderLine ready={!loading} width={76} height={22}>
+              <TitleText level="h3">{data?.hours}</TitleText>
+            </ContentLoaderLine>
           </View>
-          <View style={[CommonStyles.flex1, styles.chartBox]}>
-            <PieChart
-              style={styles.chart}
-              outerRadius={'100%'}
-              innerRadius={'65%'}
-              padAngle={0}
-              startAngle={-20}
-              data={data}
-            />
+          <View style={CommonStyles.flex1}>
+            {/* rate */}
+            <TitleText level="h5" color={Colors.lightBrown}>
+              {messages.rate}
+            </TitleText>
+            <ContentLoaderLine ready={!loading} width={76} height={22}>
+              <TitleText level="h3">
+                <MoneyValue value={data?.rate} />
+              </TitleText>
+            </ContentLoaderLine>
           </View>
-          <View />
         </View>
+      </View>
+      <View style={[CommonStyles.flex1, styles.chartBox]}>
+        <ContentLoaderCircle
+          ready={!loading}
+          size={150}
+          width={150}
+          height={150}>
+          <PieChart
+            style={styles.chart}
+            outerRadius={'100%'}
+            innerRadius={'65%'}
+            padAngle={0}
+            startAngle={-20}
+            data={data?.dataChart}
+          />
+        </ContentLoaderCircle>
       </View>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
-  shadowBox: {
-    width: '100%',
-    paddingVertical: 8,
-    paddingHorizontal: 8,
-    marginTop: 15,
-  },
-  container: {
-    width: '100%',
-    paddingHorizontal: 24,
-    paddingRight: 20,
-    paddingVertical: 25,
-    paddingBottom: 40,
-    backgroundColor: Colors.warnLight,
-    borderRadius: 8,
-    ...CommonStyles.shadow,
-  },
-  titleRow: {
-    height: 40,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
   contentRow: {
     flexDirection: 'row',
     paddingHorizontal: 6,
@@ -122,11 +103,6 @@ const styles = StyleSheet.create({
   },
   chart: {
     height: 150,
-  },
-  icon: {
-    width: 24,
-    height: 24,
-    resizeMode: 'contain',
   },
 });
 

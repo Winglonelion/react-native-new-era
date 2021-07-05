@@ -5,8 +5,18 @@ import messages from './PayHistory.messages';
 import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
 import PayHistoryItem from '../PayHistoryItem/PayHistoryItem';
+import { observer } from 'mobx-react';
+import { GetPaidHistoryOverViewResponse } from 'api/paid/paid.api.types';
 
-const PayHistoryOverView = () => {
+interface PropTypes {
+  loading?: boolean;
+  overViewData?: GetPaidHistoryOverViewResponse;
+}
+
+const PayHistoryOverView: React.FC<PropTypes> = ({
+  loading,
+  overViewData: overviewData,
+}) => {
   return (
     <View style={styles.shadowBox}>
       <View style={styles.container}>
@@ -18,10 +28,18 @@ const PayHistoryOverView = () => {
             style={styles.icon}
           />
         </View>
+        {loading ? (
+          <>
+            <PayHistoryItem key="place_holder_1" />
+            <PayHistoryItem key="place_holder_2" />
+            <PayHistoryItem key="place_holder_3" />
+          </>
+        ) : (
+          overviewData?.map(item => (
+            <PayHistoryItem key={item.date} item={item} />
+          ))
+        )}
         {/* contents */}
-        <PayHistoryItem />
-        <PayHistoryItem />
-        <PayHistoryItem />
       </View>
     </View>
   );
@@ -57,4 +75,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PayHistoryOverView;
+export default observer(PayHistoryOverView);

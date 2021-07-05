@@ -12,7 +12,7 @@ import Platform from 'utils/platform';
 import CommonStyles from 'theme/CommonStyles';
 
 interface PropTypes {
-  data: {
+  data?: {
     svg?: object;
     key: any;
     value?: number;
@@ -79,6 +79,8 @@ class PieChart extends PureComponent<PropTypes, StateTypes> {
       startAngle = PieChart.defaultProps.startAngle,
       endAngle = PieChart.defaultProps.endAngle,
     } = this.props;
+
+    if (!data || data.length === 0) return null;
 
     const { height, width } = this.state;
 

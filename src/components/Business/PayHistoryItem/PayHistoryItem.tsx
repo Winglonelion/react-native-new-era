@@ -7,9 +7,10 @@ import messages from './PayHistory.messages';
 import MoneyValue from 'components/Base/Text/MoneyValue/';
 import ContentText from 'components/Base/Text/ContentText/ContentText';
 import Colors from 'theme/colors';
+import ContentLoaderLine from 'components/Base/ContentLoader/BuildIn/ContentLoaderLine';
 
 interface PropTypes {
-  item: {
+  item?: {
     date: string;
     take_home: number;
     hours: number;
@@ -22,7 +23,12 @@ const PayHistoryItem: React.FC<PropTypes> = memo(
     return (
       <View style={styles.container}>
         <View style={styles.contentView}>
-          <DateTitle level="h5" date={new Date(item?.date)} />
+          <ContentLoaderLine
+            width={73}
+            height={18}
+            ready={typeof item.date === 'string'}>
+            <DateTitle level="h5" date={new Date(item?.date ?? '')} />
+          </ContentLoaderLine>
           <Space height={8} />
           <View style={styles.dataRow}>
             {/* take home  */}
@@ -30,25 +36,40 @@ const PayHistoryItem: React.FC<PropTypes> = memo(
               <TitleText level="h5" color={Colors.corban}>
                 {messages.take_home}
               </TitleText>
-              <ContentText size={16}>
-                <MoneyValue value={item.take_home} />
-              </ContentText>
+              <ContentLoaderLine
+                width={80}
+                height={22}
+                ready={typeof item.take_home === 'number'}>
+                <ContentText size={16}>
+                  <MoneyValue value={item.take_home} />
+                </ContentText>
+              </ContentLoaderLine>
             </View>
             {/* hours */}
             <View style={styles.dataRowItem}>
               <TitleText level="h5" color={Colors.corban}>
                 {messages.hours}
               </TitleText>
-              <ContentText size={16}>{item.hours.toFixed(2)}</ContentText>
+              <ContentLoaderLine
+                width={80}
+                height={22}
+                ready={typeof item.hours === 'number'}>
+                <ContentText size={16}>{item.hours?.toFixed(2)}</ContentText>
+              </ContentLoaderLine>
             </View>
             {/* gross */}
             <View style={styles.dataRowItem}>
               <TitleText level="h5" color={Colors.corban}>
                 {messages.gross}
               </TitleText>
-              <ContentText size={16}>
-                <MoneyValue value={item.gross} />
-              </ContentText>
+              <ContentLoaderLine
+                width={80}
+                height={22}
+                ready={typeof item.gross === 'number'}>
+                <ContentText size={16}>
+                  <MoneyValue value={item.gross} />
+                </ContentText>
+              </ContentLoaderLine>
             </View>
           </View>
         </View>
@@ -63,10 +84,10 @@ const PayHistoryItem: React.FC<PropTypes> = memo(
 
 const payHistoryItemDefaultProps = {
   item: {
-    date: new Date().toString(),
-    take_home: 22000.01,
-    hours: 180.0,
-    gross: 2400,
+    date: undefined,
+    take_home: undefined,
+    hours: undefined,
+    gross: undefined,
   },
 };
 

@@ -40,6 +40,7 @@ const CommonStyles = {
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 2,
     shadowOpacity: 1,
+    elevation: 2,
   } as ViewStyle,
 };
 

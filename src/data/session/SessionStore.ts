@@ -5,7 +5,7 @@
  * @author Thuan <nguyenbuiducthuan@gmail.com>
  *
  * Created at     : 2021-06-30 11:25:17
- * Last modified  : 2021-07-02 03:44:16
+ * Last modified  : 2021-07-05 13:55:09
  */
 
 import SessionAPI from 'api/session/session.api';
@@ -63,11 +63,11 @@ export class SessionStore {
       this.access_token = access_token;
       userProfileStore.setUser({
         full_name: 'Tony Stark',
-        birthday: '08/09/1993',
+        birthday: '1993/09/08',
         ethnicity: 'Egypth',
         is_new_user: true,
-        nickname: 'Bad Boyz',
-        date_married: '30/03/2021',
+        nickname: '',
+        date_married: '2021/03/30',
         marital_status: 'married',
       });
       this.session_status = SESSION_STATUS.AUTHORIZED;

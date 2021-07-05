@@ -4,6 +4,7 @@ const Colors = {
   brown: '#6E554F',
   lightBrown: '#9C9079',
   grey: '#DADFE6',
+  greyBrown: '#F0EDEB',
   dark: '#373F41',
   warnLight: '#FAF8F7',
   coldLight: '#F2F7F7',

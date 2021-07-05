@@ -13,7 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
-const AuthorizedStack = () => {
+const HomeStack = () => {
   const renderIcon = useCallback(
     () => (
       <TouchableWithoutFeedback onPress={toggleDrawer}>
@@ -32,14 +32,13 @@ const AuthorizedStack = () => {
       <Stack.Navigator
         screenOptions={{
           gestureEnabled: true,
+          headerBackTitleVisible: false,
+          headerHideShadow: true,
+          headerTintColor: Colors.lightBrown,
         }}>
         <Stack.Screen
           options={{
             title: 'Home',
-            headerHideShadow: true,
-            headerTitleStyle: {
-              color: Colors.lightBrown,
-            },
             headerLeft: renderIcon,
           }}
           name={ROUTES.HOME_SCREEN}
@@ -64,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default observer(AuthorizedStack);
+export default observer(HomeStack);
