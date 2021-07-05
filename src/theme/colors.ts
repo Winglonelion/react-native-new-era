@@ -10,6 +10,8 @@ const Colors = {
   coldLight: '#F2F7F7',
   shadow: 'rgba(45, 49, 53, 0.18)',
   corban: '#8EADAD',
+  disabled: '#F8F8F8',
+  orange: '#FF894D',
 };
 
 export default Colors;

@@ -8,31 +8,37 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import TitleText from 'components/Base/Text/TitleText';
+// import Colors from 'theme/colors';
 
 interface PropTypes {
   icon: ImageSourcePropType;
   text: string;
   onPress?: (event?: GestureResponderEvent) => void;
+  disabled?: boolean;
 }
 
-const ProfileMenuItem: React.FC<PropTypes> = memo(({ icon, text, onPress }) => {
-  return (
-    <TouchableWithoutFeedback onPress={onPress}>
-      <View style={styles.container}>
-        <View style={styles.content}>
-          <Image source={icon} style={styles.icon} />
-          <TitleText level="h3" style={styles.title}>
-            {text}
-          </TitleText>
+const ProfileMenuItem: React.FC<PropTypes> = memo(
+  ({ icon, text, onPress, disabled = false }) => {
+    const isDisabled = disabled || !onPress;
+    return (
+      <TouchableWithoutFeedback disabled={isDisabled} onPress={onPress}>
+        <View
+          style={[styles.container, isDisabled && styles.disabledContainer]}>
+          <View style={styles.content}>
+            <Image source={icon} style={styles.icon} />
+            <TitleText level="h3" style={styles.title}>
+              {text}
+            </TitleText>
+          </View>
+          <Image
+            source={require('images/chevron_right_brown.png')}
+            style={styles.icon}
+          />
         </View>
-        <Image
-          source={require('images/chevron_right_brown.png')}
-          style={styles.icon}
-        />
-      </View>
-    </TouchableWithoutFeedback>
-  );
-});
+      </TouchableWithoutFeedback>
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -40,6 +46,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 15,
     alignItems: 'center',
+  },
+  disabledContainer: {
+    // backgroundColor: Colors.disabled,
   },
   content: {
     paddingVertical: 15,

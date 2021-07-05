@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { observer } from 'mobx-react';
+import { capitalize } from 'lodash';
 
 import CommonStyles from 'theme/CommonStyles';
 import Space from 'components/Base/Space/Space';
@@ -10,11 +11,17 @@ import DetailDataRow from 'components/Common/DetailDataRow';
 import messages from './PersonalInfoScreen.messages';
 import usePersonalInfoScreenLogic from './PersonalInfoScreen.logic';
 import { formatDate } from 'utils/date';
+import { navigateTo } from 'routes/actions';
+import ROUTES from 'routes/names';
 
 type PropTypes = {};
 
 const PersonalInfoScreen: React.FC<PropTypes> = () => {
   const { personalInfo } = usePersonalInfoScreenLogic();
+  const navigateToEditNickName = useCallback(() => {
+    navigateTo(ROUTES.TEXT_DATA_UPDATE_SCREEN, { title: 'Nickname' });
+  }, []);
+
   return (
     <View style={CommonStyles.container}>
       <View style={styles.bg}>
@@ -51,23 +58,24 @@ const PersonalInfoScreen: React.FC<PropTypes> = () => {
           <View style={styles.itemRow}>
             {/* nickname */}
             <DetailDataRow
-              onPress={() => null}
+              onPress={navigateToEditNickName}
               title={messages.menu_nickname}
               content={personalInfo.nickname}
             />
             <View style={styles.line} />
             {/* marital status */}
             <DetailDataRow
+              onPress={() => null}
               title={messages.menu_marital_status}
-              content={personalInfo.marital_status}
+              content={capitalize(personalInfo.marital_status)}
             />
             <View style={styles.line} />
             {/* married date */}
             <DetailDataRow
+              onPress={() => null}
               title={messages.menu_date_married}
               content={formatDate(personalInfo.date_married, 'dd/mm/yyyy')}
             />
-            <View style={styles.line} />
           </View>
         </ScrollView>
       </View>

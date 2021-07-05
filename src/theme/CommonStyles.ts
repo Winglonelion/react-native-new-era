@@ -42,6 +42,12 @@ const CommonStyles = {
     shadowOpacity: 1,
     elevation: 2,
   } as ViewStyle,
+  menuItem: {
+    borderBottomColor: Colors.greyBrown,
+    borderTopColor: Colors.greyBrown,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+  } as ViewStyle,
 };
 
 export default CommonStyles;

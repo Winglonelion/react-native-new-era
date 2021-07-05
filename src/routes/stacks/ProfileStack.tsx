@@ -1,35 +1,29 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-
-import ROUTES from 'routes/names';
-import Colors from 'theme/colors';
-import CommonStyles from 'theme/CommonStyles';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import ProfileScreen from 'screens/ProfileScreen';
-import PersonalInfoScreen from 'screens/PersonalInfoScreen';
-import { toggleDrawer } from 'routes/actions';
 import {
   TouchableWithoutFeedback,
   View,
   Image,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import ROUTES from 'routes/names';
+import Colors from 'theme/colors';
+import CommonStyles from 'theme/CommonStyles';
+import { toggleDrawer } from 'routes/actions';
+import ProfileScreen from 'screens/ProfileScreen';
+import PersonalInfoScreen from 'screens/PersonalInfoScreen';
+import TextDataUpdateScreen, {
+  TextDataUpdateScreenRouteProp,
+} from 'screens/TextDataUpdateScreen';
+import ContentText from 'components/Base/Text/ContentText/ContentText';
+import TextDataUpdateScreenStore from 'screens/TextDataUpdateScreen/TextDataUpdateScreen.store';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
 const ProfileStack = () => {
-  const renderIcon = useCallback(
-    () => (
-      <TouchableWithoutFeedback onPress={toggleDrawer}>
-        <View style={styles.menuButton}>
-          <Image style={styles.menuImage} source={require('images/menu.png')} />
-        </View>
-      </TouchableWithoutFeedback>
-    ),
-    [],
-  );
-
   return (
     <SafeAreaView
       edges={['left', 'top', 'right']}
@@ -44,7 +38,7 @@ const ProfileStack = () => {
         <Stack.Screen
           options={{
             title: 'Profile',
-            headerLeft: renderIcon,
+            headerLeft: renderMenuBtn,
           }}
           name={ROUTES.PROFILE_SCREEN}
           component={ProfileScreen}
@@ -55,6 +49,11 @@ const ProfileStack = () => {
           }}
           name={ROUTES.PERSONAL_INFO_SCREEN}
           component={PersonalInfoScreen}
+        />
+        <Stack.Screen
+          options={renderDoneBtn}
+          name={ROUTES.TEXT_DATA_UPDATE_SCREEN}
+          component={TextDataUpdateScreen}
         />
       </Stack.Navigator>
     </SafeAreaView>
@@ -77,5 +76,39 @@ const styles = StyleSheet.create({
     color: Colors.lightBrown,
   },
 });
+
+const renderDoneBtn = ({ route }: { route: TextDataUpdateScreenRouteProp }) => {
+  return {
+    title: route.params.title,
+    headerRight: () => {
+      if (!route.params.onComplete) return null;
+      const submit = () => {
+        const { onComplete } = route.params;
+        const currentStore = TextDataUpdateScreenStore.getCurrentStore();
+        const { ok, error } = currentStore.validate(route.params.validator);
+        if (!error && ok) {
+          onComplete && onComplete(currentStore.text);
+        } else {
+          currentStore.setError(error?.message || 'unknown');
+        }
+      };
+      return (
+        <TouchableWithoutFeedback onPress={submit}>
+          <ContentText size={16} color={Colors.orange}>
+            Done
+          </ContentText>
+        </TouchableWithoutFeedback>
+      );
+    },
+  };
+};
+
+const renderMenuBtn = () => (
+  <TouchableWithoutFeedback onPress={toggleDrawer}>
+    <View style={styles.menuButton}>
+      <Image style={styles.menuImage} source={require('images/menu.png')} />
+    </View>
+  </TouchableWithoutFeedback>
+);
 
 export default observer(ProfileStack);

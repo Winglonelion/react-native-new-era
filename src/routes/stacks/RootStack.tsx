@@ -7,10 +7,18 @@ import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import ROUTES from '../names';
 import UnAuthorizedStack from './UnAuthorizedStack';
 import MainDrawer from 'routes/drawer/MainDrawer';
+import { PressEvent } from 'types/events';
 
 export interface RootStackParamsList extends ParamListBase {
   LOGIN: undefined;
   REGISTER: undefined;
+
+  TEXT_DATA_UPDATE_SCREEN: {
+    title?: string;
+    onComplete?: (text: string) => void;
+    onCancel?: PressEvent;
+    validator?: (text: string) => { error?: Error };
+  };
 }
 
 const Stack = createNativeStackNavigator<Record<string, any>>();
