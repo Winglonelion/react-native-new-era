@@ -48,6 +48,12 @@ const CommonStyles = {
     borderTopWidth: 1,
     borderBottomWidth: 1,
   } as ViewStyle,
+  line: {
+    width: '100%',
+    left: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.greyBrown,
+  } as ViewStyle,
 };
 
 export default CommonStyles;

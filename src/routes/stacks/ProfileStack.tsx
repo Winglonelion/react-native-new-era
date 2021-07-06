@@ -72,9 +72,6 @@ const styles = StyleSheet.create({
     height: 24,
     resizeMode: 'contain',
   },
-  headerTitleStyle: {
-    color: Colors.lightBrown,
-  },
 });
 
 const renderDoneBtn = ({ route }: { route: TextDataUpdateScreenRouteProp }) => {
@@ -83,7 +80,6 @@ const renderDoneBtn = ({ route }: { route: TextDataUpdateScreenRouteProp }) => {
     headerRight: () => {
       if (!route.params.onComplete) return null;
       const submit = () => {
-        console.log('----> click header right');
         const { onComplete } = route.params;
         const currentStore = TextDataUpdateScreenStore.getCurrentStore();
         const { ok, error } = currentStore.validate(route.params.validator);

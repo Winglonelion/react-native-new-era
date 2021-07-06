@@ -48,25 +48,25 @@ const PersonalInfoScreen: React.FC<PropTypes> = () => {
                 title={messages.menu_name}
                 content={personalInfo.full_name}
               />
-              <View style={styles.line} />
+              <View style={CommonStyles.line} />
               {/* birth day */}
               <DetailDataRow
                 title={messages.menu_birthday}
                 content={formatDate(personalInfo.birthday, 'dd/mm/yyyy')}
               />
-              <View style={styles.line} />
+              <View style={CommonStyles.line} />
               {/* age */}
               <DetailDataRow
                 title={messages.menu_age}
                 content={personalInfo.age}
               />
-              <View style={styles.line} />
+              <View style={CommonStyles.line} />
               {/* ethnicity */}
               <DetailDataRow
                 title={messages.menu_ethnicity}
                 content={personalInfo.ethnicity}
               />
-              <View style={styles.line} />
+              <View style={CommonStyles.line} />
             </View>
             <Space height={15} />
 
@@ -77,14 +77,14 @@ const PersonalInfoScreen: React.FC<PropTypes> = () => {
                 title={messages.menu_nickname}
                 content={personalInfo.nickname}
               />
-              <View style={styles.line} />
+              <View style={CommonStyles.line} />
               {/* marital status */}
               <DetailDataRow
                 onPress={openModalMartialStatus}
                 title={messages.menu_marital_status}
                 content={capitalize(personalInfo.marital_status)}
               />
-              <View style={styles.line} />
+              <View style={CommonStyles.line} />
               {/* married date */}
               <DetailDataRow
                 onPress={() => null}
@@ -117,12 +117,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderTopColor: Colors.greyBrown,
-    borderBottomColor: Colors.greyBrown,
-  },
-  line: {
-    width: '100%',
-    left: 15,
-    borderBottomWidth: 1,
     borderBottomColor: Colors.greyBrown,
   },
 });

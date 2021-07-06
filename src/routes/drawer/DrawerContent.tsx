@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   DrawerContentScrollView,
@@ -12,6 +12,7 @@ import ROUTES from 'routes/names';
 import Colors from 'theme/colors';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import messages from './DrawerContent.messages';
+import sessionStore from 'data/session/SessionStore';
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   const navigation = useNavigation();
@@ -23,10 +24,24 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   }, [props.navigation]);
 
   const navigateFeedback = useCallback(() => {
-    props.navigation.navigate(ROUTES.SETTING_SCREEN);
+    props.navigation.navigate(ROUTES.FEEDBACK_SCREEN);
   }, [props.navigation]);
 
-  const logout = useCallback(() => {}, []);
+  const logout = useCallback(() => {
+    Alert.alert('Do you want to logout?', 'We will miss you very much', [
+      {
+        text: 'Log out',
+        style: 'destructive',
+        onPress: () => {
+          sessionStore.logout();
+        },
+      },
+      {
+        text: 'Cancel',
+        style: 'cancel',
+      },
+    ]);
+  }, []);
   return (
     <DrawerContentScrollView {...props}>
       <SafeAreaView style={styles.container}>

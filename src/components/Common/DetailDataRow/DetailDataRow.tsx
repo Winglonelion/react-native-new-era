@@ -13,10 +13,11 @@ interface PropTypes {
   title: string;
   content?: string | number | null;
   onPress?: PressEvent;
+  strongChevron?: boolean;
 }
 
 const DetailDataRow: React.FC<PropTypes> = memo(
-  ({ title, content, onPress }) => {
+  ({ title, content, onPress, strongChevron = false }) => {
     return (
       <TouchableWithoutFeedback disabled={!onPress} onPress={onPress}>
         <View style={styles.container}>
@@ -24,13 +25,19 @@ const DetailDataRow: React.FC<PropTypes> = memo(
             <ContentText size={16} style={styles.text}>
               {title}
             </ContentText>
-            <ContentText size={16} style={[styles.text, styles.contentTxt]}>
-              {content || '—'}
-            </ContentText>
+            {content !== null && (
+              <ContentText size={16} style={[styles.text, styles.contentTxt]}>
+                {content || '—'}
+              </ContentText>
+            )}
           </View>
           {!!onPress && (
             <Image
-              source={require('images/chevron_right_light_brown.png')}
+              source={
+                strongChevron
+                  ? require('images/chevron_right_brown.png')
+                  : require('images/chevron_right_light_brown.png')
+              }
               style={styles.icon}
             />
           )}

@@ -9,7 +9,6 @@ const usePersonalInfoScreenLogic = () => {
     useState(false);
 
   const updateNickname = useCallback((text: string) => {
-    console.log('set nickname', text);
     userProfileStore.updateUserData({ nickname: text });
   }, []);
 

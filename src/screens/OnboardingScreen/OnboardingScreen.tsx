@@ -38,7 +38,6 @@ const OnboardingScreen: React.FC<PropTypes> = () => {
         ),
         DATA.length,
       );
-      console.log('pageNumber', pageNumber);
       setIndex(pageNumber);
     },
     [setIndex],

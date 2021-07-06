@@ -9,6 +9,7 @@ import { observer } from 'mobx-react';
 import userProfileStore from 'data/user/UserProfileStore';
 import SettingScreen from 'screens/SettingScreen/SettingScreen';
 import FeedbackScreen from 'screens/FeedbackScreen/FeedbackScreen';
+import Colors from 'theme/colors';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
@@ -22,6 +23,8 @@ const AuthorizedStack = () => {
       }
       screenOptions={{
         gestureEnabled: false,
+        headerTintColor: Colors.lightBrown,
+        headerBackTitleVisible: false,
       }}>
       <Stack.Screen
         options={{ headerShown: false }}
@@ -33,7 +36,13 @@ const AuthorizedStack = () => {
         name={ROUTE_TABS.MAIN_TAB}
         component={MainTab}
       />
-      <Stack.Screen name={ROUTES.SETTING_SCREEN} component={SettingScreen} />
+      <Stack.Screen
+        options={{
+          title: 'Settings',
+        }}
+        name={ROUTES.SETTING_SCREEN}
+        component={SettingScreen}
+      />
       <Stack.Screen name={ROUTES.FEEDBACK_SCREEN} component={FeedbackScreen} />
     </Stack.Navigator>
   );

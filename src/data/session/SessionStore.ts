@@ -5,7 +5,7 @@
  * @author Thuan <nguyenbuiducthuan@gmail.com>
  *
  * Created at     : 2021-06-30 11:25:17
- * Last modified  : 2021-07-05 13:55:09
+ * Last modified  : 2021-07-06 11:08:03
  */
 
 import SessionAPI from 'api/session/session.api';
@@ -111,6 +111,7 @@ export class SessionStore {
     this.access_token = '';
     SessionMMKVStore.clearStore();
     this.session_status = SESSION_STATUS.UNAUTHORIZED;
+    userProfileStore.clearUser();
   }
 }
 /**

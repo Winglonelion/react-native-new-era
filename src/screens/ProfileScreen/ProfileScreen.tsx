@@ -34,13 +34,13 @@ const ProfileScreen: React.FC<PropTypes> = () => {
             text={messages.menu_personal_info}
             onPress={navigateToPersonInfoScreen}
           />
-          <View style={styles.line} />
+          <View style={CommonStyles.line} />
           {/* contact info */}
           <ProfileMenuItem
             icon={require('images/contact_info.png')}
             text={messages.menu_contact_info}
           />
-          <View style={styles.line} />
+          <View style={CommonStyles.line} />
           <ProfileMenuItem
             icon={require('images/address.png')}
             text={messages.menu_address}
@@ -87,12 +87,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderTopColor: Colors.greyBrown,
-    borderBottomColor: Colors.greyBrown,
-  },
-  line: {
-    width: '100%',
-    paddingLeft: 25,
-    borderBottomWidth: 1,
     borderBottomColor: Colors.greyBrown,
   },
 });
