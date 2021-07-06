@@ -5,9 +5,11 @@ export class TextDataUpdateScreenStore {
   key: string = '';
 
   error: string = '';
+  errorHandler: () => void;
 
-  constructor(key: string) {
+  constructor(key: string, errorHandler: () => void) {
     this.key = key;
+    this.errorHandler = errorHandler;
     makeObservable(this, {
       text: observable,
       error: observable,
@@ -17,6 +19,7 @@ export class TextDataUpdateScreenStore {
       setError: action,
     });
   }
+
   validate = (validator?: (text: string) => { error?: Error }) => {
     if (!validator) return { ok: true };
     const { error } = validator(this.text) || { error: '' };
@@ -25,6 +28,7 @@ export class TextDataUpdateScreenStore {
 
   clear = () => {
     this.text = '';
+    this.error = '';
   };
 
   setText = (text: string) => {
@@ -35,11 +39,15 @@ export class TextDataUpdateScreenStore {
     this.error = error;
   };
 
-  static provideStore(key: string) {
+  onError() {
+    this.errorHandler && this.errorHandler();
+  }
+
+  static provideStore(key: string, errorHandler: () => void) {
     if (TextDataUpdateScreenStore.currentKey === key) {
       return TextDataUpdateScreenStore.currentStore;
     }
-    const store = new TextDataUpdateScreenStore(key);
+    const store = new TextDataUpdateScreenStore(key, errorHandler);
     TextDataUpdateScreenStore.currentStore = store;
     return store;
   }
@@ -49,7 +57,7 @@ export class TextDataUpdateScreenStore {
   }
 
   static currentStore: TextDataUpdateScreenStore =
-    new TextDataUpdateScreenStore('');
+    new TextDataUpdateScreenStore('', () => null);
   static currentKey: string = '';
 }
 

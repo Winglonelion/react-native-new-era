@@ -51,7 +51,7 @@ const ProfileStack = () => {
           component={PersonalInfoScreen}
         />
         <Stack.Screen
-          options={renderDoneBtn}
+          options={textDataOptions}
           name={ROUTES.TEXT_DATA_UPDATE_SCREEN}
           component={TextDataUpdateScreen}
         />
@@ -74,7 +74,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const renderDoneBtn = ({ route }: { route: TextDataUpdateScreenRouteProp }) => {
+const textDataOptions = ({
+  route,
+}: {
+  route: TextDataUpdateScreenRouteProp;
+}) => {
   return {
     title: route.params.title,
     headerRight: () => {
@@ -89,6 +93,7 @@ const renderDoneBtn = ({ route }: { route: TextDataUpdateScreenRouteProp }) => {
           goBack();
         } else {
           currentStore.setError(error?.message || 'unknown');
+          currentStore.onError();
         }
       };
       return (

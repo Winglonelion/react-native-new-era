@@ -12,6 +12,7 @@ const Colors = {
   corban: '#8EADAD',
   disabled: '#F8F8F8',
   orange: '#FF894D',
+  error: '#EF5858',
 };
 
 export default Colors;

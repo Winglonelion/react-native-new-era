@@ -15,7 +15,7 @@ import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
 import { FontFamily } from 'theme/CommonFonts';
 import { observer } from 'mobx-react';
-import TitleText from 'components/Base/Text/TitleText';
+import ContentText from 'components/Base/Text/ContentText/ContentText';
 
 export type ScreenRouteProp = RouteProp<
   RootStackParamsList,
@@ -28,19 +28,21 @@ interface PropTypes {
 
 const TextDataUpdateScreen: React.FC<PropTypes> = ({ route }) => {
   // const { onComplete, onCancel } = route.params;
-  const { text, setText, clearText, error } = useTextDataUpdateScreenLogic(
-    route.key,
-  );
+  const { text, setText, clearText, error, clearError, inputRef } =
+    useTextDataUpdateScreenLogic(route.key);
 
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
+          ref={inputRef}
           style={styles.textInput}
           autoFocus
           value={text}
           onChangeText={setText}
           clearButtonMode="never"
+          onFocus={clearError}
+          blurOnSubmit
         />
         <View style={styles.clearBox}>
           {!!text && (
@@ -53,7 +55,13 @@ const TextDataUpdateScreen: React.FC<PropTypes> = ({ route }) => {
           )}
         </View>
       </View>
-      {!!error && <TitleText level="h4">{error}</TitleText>}
+      <View style={styles.errorBox}>
+        {!!error && (
+          <ContentText size={12} color={Colors.error}>
+            {error}
+          </ContentText>
+        )}
+      </View>
     </View>
   );
 };
@@ -87,6 +95,10 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     resizeMode: 'contain',
+  },
+  errorBox: {
+    paddingHorizontal: 15,
+    paddingTop: 3,
   },
 });
 
