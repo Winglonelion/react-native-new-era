@@ -12,7 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import ROUTES from 'routes/names';
 import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
-import { toggleDrawer } from 'routes/actions';
+import { toggleDrawer, goBack } from 'routes/actions';
 import ProfileScreen from 'screens/ProfileScreen';
 import PersonalInfoScreen from 'screens/PersonalInfoScreen';
 import TextDataUpdateScreen, {
@@ -83,20 +83,25 @@ const renderDoneBtn = ({ route }: { route: TextDataUpdateScreenRouteProp }) => {
     headerRight: () => {
       if (!route.params.onComplete) return null;
       const submit = () => {
+        console.log('----> click header right');
         const { onComplete } = route.params;
         const currentStore = TextDataUpdateScreenStore.getCurrentStore();
         const { ok, error } = currentStore.validate(route.params.validator);
+
         if (!error && ok) {
           onComplete && onComplete(currentStore.text);
+          goBack();
         } else {
           currentStore.setError(error?.message || 'unknown');
         }
       };
       return (
         <TouchableWithoutFeedback onPress={submit}>
-          <ContentText size={16} color={Colors.orange}>
-            Done
-          </ContentText>
+          <View>
+            <ContentText size={16} color={Colors.orange}>
+              Done
+            </ContentText>
+          </View>
         </TouchableWithoutFeedback>
       );
     },

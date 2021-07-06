@@ -1,5 +1,9 @@
 package com.vensure;
 
+// import com.ammarahmed.mmkv.RNMMKVJSIModulePackage;
+import com.vensure.CustomMMKVJSIModulePackage;
+import com.facebook.react.bridge.JSIModulePackage;
+
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -33,6 +37,13 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSMainModuleName() {
           return "index";
         }
+
+        // add this method to load our JSI Module.
+          @Override
+          protected JSIModulePackage getJSIModulePackage() {
+              return new CustomMMKVJSIModulePackage();
+          }
+        //
       };
 
   @Override

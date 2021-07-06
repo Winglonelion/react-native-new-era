@@ -13,73 +13,97 @@ import usePersonalInfoScreenLogic from './PersonalInfoScreen.logic';
 import { formatDate } from 'utils/date';
 import { navigateTo } from 'routes/actions';
 import ROUTES from 'routes/names';
+import SelectMaritalStatus from 'modals/SelectMaritalStatus';
+import { MARITAL_STATUSES } from 'data/user/UserProfile.values';
 
 type PropTypes = {};
 
 const PersonalInfoScreen: React.FC<PropTypes> = () => {
-  const { personalInfo } = usePersonalInfoScreenLogic();
+  const {
+    personalInfo,
+    nickNameValidator,
+    updateNickname,
+    updateMaritalStatus,
+    closeModalMartialStatus,
+    isModalMartialStatusVisible,
+    openModalMartialStatus,
+  } = usePersonalInfoScreenLogic();
   const navigateToEditNickName = useCallback(() => {
-    navigateTo(ROUTES.TEXT_DATA_UPDATE_SCREEN, { title: 'Nickname' });
-  }, []);
+    navigateTo(ROUTES.TEXT_DATA_UPDATE_SCREEN, {
+      title: 'Nickname',
+      onComplete: updateNickname,
+      validator: nickNameValidator,
+    });
+  }, [nickNameValidator, updateNickname]);
 
   return (
-    <View style={CommonStyles.container}>
-      <View style={styles.bg}>
-        <ScrollView>
-          <Space height={15} />
-          <View style={styles.itemRow}>
-            {/* full name */}
-            <DetailDataRow
-              title={messages.menu_name}
-              content={personalInfo.full_name}
-            />
-            <View style={styles.line} />
-            {/* birth day */}
-            <DetailDataRow
-              title={messages.menu_birthday}
-              content={formatDate(personalInfo.birthday, 'dd/mm/yyyy')}
-            />
-            <View style={styles.line} />
-            {/* age */}
-            <DetailDataRow
-              title={messages.menu_age}
-              content={personalInfo.age}
-            />
-            <View style={styles.line} />
-            {/* ethnicity */}
-            <DetailDataRow
-              title={messages.menu_ethnicity}
-              content={personalInfo.ethnicity}
-            />
-            <View style={styles.line} />
-          </View>
-          <Space height={15} />
+    <>
+      <View style={CommonStyles.container}>
+        <View style={styles.bg}>
+          <ScrollView>
+            <Space height={15} />
+            <View style={styles.itemRow}>
+              {/* full name */}
+              <DetailDataRow
+                title={messages.menu_name}
+                content={personalInfo.full_name}
+              />
+              <View style={styles.line} />
+              {/* birth day */}
+              <DetailDataRow
+                title={messages.menu_birthday}
+                content={formatDate(personalInfo.birthday, 'dd/mm/yyyy')}
+              />
+              <View style={styles.line} />
+              {/* age */}
+              <DetailDataRow
+                title={messages.menu_age}
+                content={personalInfo.age}
+              />
+              <View style={styles.line} />
+              {/* ethnicity */}
+              <DetailDataRow
+                title={messages.menu_ethnicity}
+                content={personalInfo.ethnicity}
+              />
+              <View style={styles.line} />
+            </View>
+            <Space height={15} />
 
-          <View style={styles.itemRow}>
-            {/* nickname */}
-            <DetailDataRow
-              onPress={navigateToEditNickName}
-              title={messages.menu_nickname}
-              content={personalInfo.nickname}
-            />
-            <View style={styles.line} />
-            {/* marital status */}
-            <DetailDataRow
-              onPress={() => null}
-              title={messages.menu_marital_status}
-              content={capitalize(personalInfo.marital_status)}
-            />
-            <View style={styles.line} />
-            {/* married date */}
-            <DetailDataRow
-              onPress={() => null}
-              title={messages.menu_date_married}
-              content={formatDate(personalInfo.date_married, 'dd/mm/yyyy')}
-            />
-          </View>
-        </ScrollView>
+            <View style={styles.itemRow}>
+              {/* nickname */}
+              <DetailDataRow
+                onPress={navigateToEditNickName}
+                title={messages.menu_nickname}
+                content={personalInfo.nickname}
+              />
+              <View style={styles.line} />
+              {/* marital status */}
+              <DetailDataRow
+                onPress={openModalMartialStatus}
+                title={messages.menu_marital_status}
+                content={capitalize(personalInfo.marital_status)}
+              />
+              <View style={styles.line} />
+              {/* married date */}
+              <DetailDataRow
+                onPress={() => null}
+                title={messages.menu_date_married}
+                content={formatDate(personalInfo.date_married, 'dd/mm/yyyy')}
+              />
+            </View>
+          </ScrollView>
+        </View>
       </View>
-    </View>
+      {/* modals marital status */}
+      <SelectMaritalStatus
+        options={MARITAL_STATUSES}
+        current={personalInfo.marital_status}
+        visible={isModalMartialStatusVisible}
+        onClose={closeModalMartialStatus}
+        onComplete={updateMaritalStatus}
+      />
+    </>
   );
 };
 

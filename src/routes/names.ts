@@ -23,7 +23,7 @@ export namespace ROUTES_TYPES {
   export type FEEDBACK_SCREEN = 'FEEDBACK_SCREEN';
 }
 
-const ROUTES: {
+export interface ROUTES_TYPE {
   MAIN_DRAWER: 'MAIN_DRAWER';
   // stack
   MAIN_STACK: 'MAIN_STACK';
@@ -46,7 +46,9 @@ const ROUTES: {
   ONBOARDING_SCREEN: 'ONBOARDING_SCREEN';
   SETTING_SCREEN: 'SETTING_SCREEN';
   FEEDBACK_SCREEN: 'FEEDBACK_SCREEN';
-} = {
+}
+
+const ROUTES: ROUTES_TYPE = {
   //drawer
   MAIN_DRAWER: 'MAIN_DRAWER',
   // stack

@@ -5,24 +5,19 @@
  * @author Thuan <nguyenbuiducthuan@gmail.com>
  *
  * Created at     : 2021-07-02 01:56:05
- * Last modified  : 2021-07-05 13:45:01
+ * Last modified  : 2021-07-06 10:34:27
  */
 
-import {
-  // makeObservable,
-  // observable,
-  // computed,
-  // action,
-  // flow,
-  makeAutoObservable,
-} from 'mobx';
+export type MaritalStatusTypes = 'married' | 'single' | '';
+
+import { makeAutoObservable } from 'mobx';
 import { parse } from 'date-fns';
 export class UserProfileStore {
   full_name: string = '';
   birthday: string = '';
   ethnicity: string = '';
   nickname: string = '';
-  marital_status: string = '';
+  marital_status: MaritalStatusTypes = '';
   date_married: string = '';
   is_new_user: boolean = true;
 
@@ -57,7 +52,7 @@ export class UserProfileStore {
     birthday: string;
     ethnicity: string;
     nickname: string;
-    marital_status: string;
+    marital_status: MaritalStatusTypes;
     date_married: string;
     is_new_user: boolean;
   }) {
@@ -77,6 +72,20 @@ export class UserProfileStore {
     this.nickname = '';
     this.marital_status = '';
     this.date_married = '';
+  }
+
+  updateUserData({
+    nickname,
+    date_married,
+    marital_status,
+  }: {
+    nickname?: string;
+    date_married?: string;
+    marital_status?: MaritalStatusTypes;
+  }) {
+    if (nickname) this.nickname = nickname;
+    if (marital_status) this.marital_status = marital_status;
+    if (date_married) this.date_married = date_married;
   }
 }
 

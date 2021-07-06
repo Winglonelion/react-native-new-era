@@ -19,8 +19,8 @@ export class TextDataUpdateScreenStore {
   }
   validate = (validator?: (text: string) => { error?: Error }) => {
     if (!validator) return { ok: true };
-    const { error } = validator(this.text);
-    return { ok: !!error, error };
+    const { error } = validator(this.text) || { error: '' };
+    return { ok: !error, error };
   };
 
   clear = () => {

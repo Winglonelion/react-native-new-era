@@ -14,6 +14,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import App from './App';
 import SetupAPI from 'api/api.config';
 import ErrorBoundary from './ErrorBoundary';
+import Persister from './Persister';
 
 class AppProvider extends React.PureComponent {
   UNSAFE_componentWillMount() {
@@ -25,7 +26,9 @@ class AppProvider extends React.PureComponent {
     return (
       <SafeAreaProvider>
         <ErrorBoundary>
-          <App />
+          <Persister>
+            <App />
+          </Persister>
         </ErrorBoundary>
       </SafeAreaProvider>
     );

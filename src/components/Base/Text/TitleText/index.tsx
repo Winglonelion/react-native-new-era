@@ -1,1 +1,3 @@
-export { default as default } from './TitleText';
+import TitleText from './TitleText';
+
+export default TitleText;
