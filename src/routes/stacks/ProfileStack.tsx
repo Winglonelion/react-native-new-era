@@ -18,7 +18,7 @@ import PersonalInfoScreen from 'screens/PersonalInfoScreen';
 import TextDataUpdateScreen, {
   TextDataUpdateScreenRouteProp,
 } from 'screens/TextDataUpdateScreen';
-import ContentText from 'components/Base/Text/ContentText/ContentText';
+import ContentText from 'components/Base/Text/ContentText';
 import TextDataUpdateScreenStore from 'screens/TextDataUpdateScreen/TextDataUpdateScreen.store';
 import messages from './Navigation.messages';
 

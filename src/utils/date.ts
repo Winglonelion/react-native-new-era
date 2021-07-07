@@ -28,7 +28,7 @@ export function distanceTime(date: Date) {
   const now = new Date();
   const diffDay = differenceInDays(now, date);
   if (diffDay < 1) {
-    return formatDistanceToNow(date, { includeSeconds: true });
+    return formatDistanceToNow(date, { includeSeconds: true, addSuffix: true });
   } else if (diffDay === 1) {
     return formatRelative(date, now, { weekStartsOn: 0 });
   } else if (diffDay < 7) {

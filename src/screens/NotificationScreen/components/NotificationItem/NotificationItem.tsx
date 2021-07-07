@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import { observer } from 'mobx-react';
 import { NotificationItem as NotificationItemTypes } from '../../NotificationScreen.store';
@@ -6,6 +6,8 @@ import ContentText from 'components/Base/Text/ContentText/ContentText';
 import CheckBox from 'components/Base/CheckBox/CheckBox';
 import Colors from 'theme/colors';
 import { distanceTime } from 'utils/date';
+import { navigateTo } from 'routes/actions';
+import ROUTES from 'routes/names';
 
 interface PropTypes {
   item: NotificationItemTypes;
@@ -19,29 +21,37 @@ const NotificationItem: React.FC<PropTypes> = ({ item }) => {
   const color = item.read_time ? Colors.uncheck : Colors.black;
   const fontWeight = item.read_time ? 'normal' : '500';
 
+  const onPressNotiBody = useCallback(() => {
+    navigateTo(ROUTES.NOTIFICATION_DETAIL_SCREEN, {
+      data: item,
+    });
+  }, [item]);
+
   return (
-    <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={onPressCheckbox}>
-        <View style={styles.iconCol}>
-          <CheckBox checked={item.selected} />
-        </View>
-      </TouchableWithoutFeedback>
-      <View style={styles.contentCol}>
-        <View style={styles.titleRow}>
-          <ContentText size={14} weight={fontWeight} color={color}>
-            {item.sender.name}
-          </ContentText>
-          <ContentText size={12} weight={fontWeight} color={color}>
-            {distanceTime(new Date(item.time))}
-          </ContentText>
-        </View>
-        <View>
-          <ContentText size={16} weight={fontWeight} color={color}>
-            {item.title}
-          </ContentText>
+    <TouchableWithoutFeedback onPress={onPressNotiBody}>
+      <View style={styles.container}>
+        <TouchableWithoutFeedback onPress={onPressCheckbox}>
+          <View style={styles.iconCol}>
+            <CheckBox checked={item.selected} />
+          </View>
+        </TouchableWithoutFeedback>
+        <View style={styles.contentCol}>
+          <View style={styles.titleRow}>
+            <ContentText size={14} weight={fontWeight} color={color}>
+              {item.sender.name}
+            </ContentText>
+            <ContentText size={12} weight={fontWeight} color={color}>
+              {distanceTime(new Date(item.time))}
+            </ContentText>
+          </View>
+          <View>
+            <ContentText size={16} weight={fontWeight} color={color}>
+              {item.title}
+            </ContentText>
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 

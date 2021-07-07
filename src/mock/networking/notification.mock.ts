@@ -23,8 +23,7 @@ const STATIC_CONTENT = {
     name: 'Enrollment',
   },
   title: 'ACTION REQUIRED: Online Benefits Enrollment Ends in 1 Day',
-  message: `
-    Dear Leon,
+  message: `Dear Leon,
 
 Your PRISCILLAS TEST ACCOUNT benefit enrollment period ends in 5 days.
 
@@ -39,8 +38,7 @@ We are here to help! For assistance, please email Benefits@Vensure.com or call 1
 Sincerely,
 
 Benefits Team
-
-    `,
+`,
 };
 function generateResponse() {
   const result: GetNotificationsResponse = {

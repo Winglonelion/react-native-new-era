@@ -7,6 +7,7 @@ interface PropTypes extends TextProps {
   color?: ColorValue;
   size?: number;
   weight?: '100' | '400' | '500' | '600' | 'bold' | 'normal';
+  textAlign?: 'left' | 'right' | 'center' | 'auto' | 'justify';
   lineHeight?: number;
 }
 
@@ -18,12 +19,19 @@ const ContentText: React.FC<PropTypes> = memo(
     color = Colors.black,
     weight = 'normal',
     lineHeight = 22,
+    textAlign = 'justify',
   }) => {
     return (
       <Text
         style={[
           styles.text,
-          { fontSize: size, color, fontWeight: weight, lineHeight },
+          {
+            fontSize: size,
+            color,
+            fontWeight: weight,
+            lineHeight,
+            textAlign: textAlign,
+          },
           style,
         ]}>
         {children}

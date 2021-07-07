@@ -11,6 +11,7 @@ import Colors from 'theme/colors';
 import { toggleDrawer } from 'routes/actions';
 import CommonStyles from 'theme/CommonStyles';
 import NotificationScreen from 'screens/NotificationScreen';
+import NotificationDetailScreen from 'screens/NotificationDetailScreen';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
@@ -44,6 +45,13 @@ const NotificationStack = () => {
           }}
           name={ROUTES.NOTIFICATION_SCREEN}
           component={NotificationScreen}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Messages',
+          }}
+          name={ROUTES.NOTIFICATION_DETAIL_SCREEN}
+          component={NotificationDetailScreen}
         />
       </Stack.Navigator>
     </SafeAreaView>
