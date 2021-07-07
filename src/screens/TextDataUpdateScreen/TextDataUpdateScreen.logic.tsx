@@ -1,13 +1,11 @@
 import TextDataUpdateScreenStore from './TextDataUpdateScreen.store';
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { TextInput } from 'react-native';
 
 const useTextDataUpdateScreenLogic = (key: string) => {
   const inputRef = useRef<TextInput>(null);
   const [store] = useState(() => {
-    return TextDataUpdateScreenStore.provideStore(key, () => {
-      inputRef.current?.blur();
-    });
+    return TextDataUpdateScreenStore.provideStore(key);
   });
 
   const clearError = useCallback(() => {
@@ -21,6 +19,12 @@ const useTextDataUpdateScreenLogic = (key: string) => {
     },
     [store],
   );
+
+  useEffect(() => {
+    if (store.error) {
+      inputRef.current?.blur();
+    }
+  }, [store.error]);
 
   const clearText = useCallback(() => {
     store.clear();

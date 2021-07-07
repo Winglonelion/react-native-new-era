@@ -16,7 +16,7 @@ LogBox.ignoreLogs([
 ]);
 
 // TODO: this is setup for networking mock, remove it when implementing API
-import './src/mocks/networking';
+import './src/mock/networking';
 
 enableScreens();
 

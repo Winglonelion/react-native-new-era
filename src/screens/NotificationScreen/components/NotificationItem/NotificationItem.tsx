@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import TitleText from 'components/Base/Text/TitleText';
 import { observer } from 'mobx-react';
 import { NotificationItem as NotificationItemTypes } from '../../NotificationScreen.store';
 import ContentText from 'components/Base/Text/ContentText/ContentText';
 import CheckBox from 'components/Base/CheckBox/CheckBox';
-// import Colors from 'theme/colors';
+import Colors from 'theme/colors';
+
 interface PropTypes {
   item: NotificationItemTypes;
 }
@@ -14,6 +14,9 @@ const NotificationItem: React.FC<PropTypes> = ({ item }) => {
   const onPressCheckbox = () => {
     item.toggleSelect();
   };
+
+  const color = item.read_time ? Colors.uncheck : Colors.black;
+  const fontWeight = item.read_time ? 'normal' : '500';
 
   return (
     <View style={styles.container}>
@@ -24,11 +27,17 @@ const NotificationItem: React.FC<PropTypes> = ({ item }) => {
       </TouchableWithoutFeedback>
       <View style={styles.contentCol}>
         <View style={styles.titleRow}>
-          <TitleText level="h4">{item.title}</TitleText>
-          <TitleText level="h5">{item.time}</TitleText>
+          <ContentText size={14} weight={fontWeight} color={color}>
+            {item.title}
+          </ContentText>
+          <ContentText size={12} weight={fontWeight} color={color}>
+            {item.time}
+          </ContentText>
         </View>
         <View>
-          <ContentText size={16}>{[item.message]}</ContentText>
+          <ContentText size={16} weight={fontWeight} color={color}>
+            {item.message}
+          </ContentText>
         </View>
       </View>
     </View>

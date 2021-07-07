@@ -39,18 +39,21 @@ export class NotificationItem {
     title,
     message,
     read_time,
+    selected = false,
   }: {
     id: string;
     time: string;
     title: string;
     message: string;
-    read_time?: string;
+    read_time?: string | null;
+    selected?: boolean;
   }) {
     this.id = id;
     this.time = time;
     this.title = title;
     this.message = message;
     this.read_time = read_time ?? null;
+    this.selected = selected;
     makeAutoObservable(this, {
       toggleSelect: action,
       select: action,
@@ -114,6 +117,15 @@ class NotificationScreenStore {
     });
   }
 
+  markAsRead() {
+    if (this.selectMode === SELECT_MODE.IDLE) return;
+
+    this.list.forEach(noti => {
+      if (noti.selected && !noti.read_time) noti.readMessage();
+    });
+    this.deselectAll();
+  }
+
   setSelectMode(mode: string) {
     this.selectMode = mode;
   }
@@ -142,6 +154,7 @@ class NotificationScreenStore {
         1,
         FETCH_STATUS.FETCH_NEW,
       );
+      if (!response) return;
       const { data } = response;
       this.data = convertNotification(data);
     } catch (error) {
@@ -155,6 +168,7 @@ class NotificationScreenStore {
         1,
         FETCH_STATUS.REFRESH,
       );
+      if (!response) return;
       const { data } = response;
 
       this.data = convertNotification(data);
@@ -170,8 +184,9 @@ class NotificationScreenStore {
         nextPage,
         FETCH_STATUS.FETCH_NEXT,
       );
+      if (!response) return;
       const { data } = response;
-      const newNotifications = convertNotification(data);
+      const newNotifications = convertNotification(data, this.selectMode);
       this.data = { ...this.data, ...newNotifications };
     } catch (error) {
       console.warn('fetchNext', error);
@@ -179,14 +194,18 @@ class NotificationScreenStore {
   }
 }
 
-function convertNotification(data: NotificationData[]) {
+function convertNotification(data: NotificationData[], selectMode?: string) {
   const result: Record<string, NotificationItem> = {};
+
+  const selected = selectMode === SELECT_MODE.SELECT_ALL;
   data.forEach(noti => {
     result[noti.id] = new NotificationItem({
+      selected,
       id: noti.id,
       time: noti.time,
       title: noti.title,
       message: noti.message,
+      read_time: noti.read_time,
     });
   });
   return result;
@@ -194,6 +213,10 @@ function convertNotification(data: NotificationData[]) {
 
 const notificationScreenStore = new NotificationScreenStore();
 
+/**
+ * automation manage select mode,
+ * so not necessary to manual set select mode
+ * **/
 autorun(() => {
   let selectedCount = 0;
   notificationScreenStore.list.forEach(item => {

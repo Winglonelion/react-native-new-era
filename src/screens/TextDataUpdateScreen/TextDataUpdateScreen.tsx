@@ -27,9 +27,9 @@ interface PropTypes {
 }
 
 const TextDataUpdateScreen: React.FC<PropTypes> = ({ route }) => {
+  const { inputProps = {} } = route.params;
   const { setText, clearText, error, clearError, inputRef, showClearButton } =
     useTextDataUpdateScreenLogic(route.key);
-  const { inputProps = {} } = route.params;
 
   console.log('render TextUp', showClearButton);
 

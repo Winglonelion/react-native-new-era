@@ -5,14 +5,14 @@ export class TextDataUpdateScreenStore {
   key: string = '';
 
   error: string = '';
-  errorHandler: () => void;
+  errorHandler?: () => void;
 
   constructor({
     key,
     errorHandler,
   }: {
     key: string;
-    errorHandler: () => void;
+    errorHandler?: () => void;
   }) {
     this.key = key;
     this.errorHandler = errorHandler;
@@ -54,7 +54,7 @@ export class TextDataUpdateScreenStore {
     this.errorHandler && this.errorHandler();
   }
 
-  static provideStore(key: string, errorHandler: () => void) {
+  static provideStore(key: string, errorHandler?: () => void) {
     if (TextDataUpdateScreenStore.currentKey === key) {
       if (!TextDataUpdateScreenStore.currentStore) {
         TextDataUpdateScreenStore.currentStore = new TextDataUpdateScreenStore({
