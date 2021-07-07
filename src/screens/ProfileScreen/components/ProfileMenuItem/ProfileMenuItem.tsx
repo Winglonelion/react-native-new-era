@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import {
-  View,
-  StyleSheet,
+  GestureResponderEvent,
   Image,
   ImageSourcePropType,
+  StyleSheet,
   TouchableWithoutFeedback,
-  GestureResponderEvent,
+  View,
 } from 'react-native';
 import TitleText from 'components/Base/Text/TitleText';
 // import Colors from 'theme/colors';

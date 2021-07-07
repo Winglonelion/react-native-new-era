@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import {
-  Text,
-  View,
   Image,
-  ViewStyle,
   ImageProps,
-  TextStyle,
   ImageStyle,
+  Text,
+  TextStyle,
+  View,
+  ViewStyle,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Screen from 'utils/screen';
 import Colors from 'theme/colors';

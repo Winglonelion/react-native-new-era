@@ -1,12 +1,12 @@
 import {
-  PAID_OVERVIEW_ENDPOINT,
   PAID_HISTORY_OVERVIEW_ENDPOINT,
+  PAID_OVERVIEW_ENDPOINT,
 } from 'api/api.endpoint';
 import mock from './adapter';
 import { withDelay } from './mock.utils';
 import {
-  GetPaidOverViewResponse,
   GetPaidHistoryOverViewResponse,
+  GetPaidOverViewResponse,
 } from 'api/paid/paid.api.types';
 
 const paid_overview: GetPaidOverViewResponse = {

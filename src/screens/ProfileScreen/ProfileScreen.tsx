@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import CommonStyles from 'theme/CommonStyles';
 import Space from 'components/Base/Space/Space';

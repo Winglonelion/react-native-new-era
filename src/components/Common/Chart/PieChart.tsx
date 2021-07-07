@@ -1,13 +1,12 @@
 import React, { PureComponent, ReactElement, ReactNode } from 'react';
 import {
-  View,
-  LayoutChangeEvent,
-  ViewStyle,
   GestureResponderEvent,
+  LayoutChangeEvent,
+  View,
+  ViewStyle,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import * as shape from 'd3-shape';
-import Svg, { G, Path } from 'react-native-svg';
+import { Svg, G, Path } from 'react-native-svg';
 import Platform from 'utils/platform';
 import CommonStyles from 'theme/CommonStyles';
 

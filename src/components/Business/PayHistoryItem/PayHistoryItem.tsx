@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import DateTitle from 'components/Common/DateTitle/DateTitle';
 import Space from 'components/Base/Space/Space';
 import TitleText from 'components/Base/Text/TitleText/TitleText';

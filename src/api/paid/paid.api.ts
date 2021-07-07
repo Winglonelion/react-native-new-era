@@ -1,13 +1,13 @@
 import axios from 'axios';
 import {
-  PAID_OVERVIEW_ENDPOINT,
   PAID_HISTORY_OVERVIEW_ENDPOINT,
+  PAID_OVERVIEW_ENDPOINT,
 } from '../api.endpoint';
 import {
-  GetPaidOverViewParameters,
-  GetPaidOverViewResponse,
   GetPaidHistoryOverViewParameters,
   GetPaidHistoryOverViewResponse,
+  GetPaidOverViewParameters,
+  GetPaidOverViewResponse,
 } from './paid.api.types';
 
 export function getPaidOverViewAPI({ userId }: GetPaidOverViewParameters) {

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, StyleSheet, Switch } from 'react-native';
+import { StyleSheet, Switch, View } from 'react-native';
 import ContentText from 'components/Base/Text/ContentText';
 import Colors from 'theme/colors';
 

@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import {
-  View,
-  StyleSheet,
   Image,
+  StyleSheet,
   TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import ContentText from 'components/Base/Text/ContentText';
 import Colors from 'theme/colors';

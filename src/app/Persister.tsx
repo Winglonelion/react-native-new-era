@@ -1,4 +1,4 @@
-import React, { useState, ReactElement, useEffect } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import sessionStore from 'data/session/SessionStore';
 
 interface PropTypes {

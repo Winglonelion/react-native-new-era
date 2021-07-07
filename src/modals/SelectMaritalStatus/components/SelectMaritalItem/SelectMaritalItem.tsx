@@ -1,5 +1,5 @@
-import React, { useCallback, memo } from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import React, { memo, useCallback } from 'react';
+import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import TitleText from 'components/Base/Text/TitleText';
 import CommonStyles from 'theme/CommonStyles';
 import Icon from 'react-native-vector-icons/Feather';

@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import {
-  View,
+  ActivityIndicator,
   FlatList,
   RefreshControl,
-  ActivityIndicator,
   StyleSheet,
+  View,
 } from 'react-native';
 
 import CommonStyles from 'theme/CommonStyles';

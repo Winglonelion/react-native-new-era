@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import {
   Modal,
-  View,
+  ScrollView,
   StyleSheet,
   TouchableWithoutFeedback,
-  ScrollView,
+  View,
 } from 'react-native';
 import Screen from 'utils/screen';
 import CommonStyles from 'theme/CommonStyles';
@@ -13,6 +13,7 @@ import TitleText from 'components/Base/Text/TitleText/TitleText';
 import Icon from 'react-native-vector-icons/Feather';
 import { MaritalStatusTypes } from 'data/user/UserProfileStore';
 import SelectMaritalItem from './components/SelectMaritalItem';
+import messages from './components/SelectMaritalStatus.messages';
 // import { PressEvent } from 'types/events';
 
 interface PropTypes {
@@ -40,7 +41,7 @@ const SelectMaritalStatus: React.FC<PropTypes> = memo(
               <View style={styles.container}>
                 <View style={styles.titleRow}>
                   <TitleText level="h3" color={Colors.orange}>
-                    {'Marital status'}
+                    {messages.title_marital_status}
                   </TitleText>
                   {/* list item */}
                 </View>

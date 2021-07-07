@@ -13,7 +13,7 @@ import { LoginResponse } from 'api/session/session.api.types';
 import { AxiosResponse } from 'axios';
 import { SESSION_STATUS } from 'constants/session';
 import userProfileStore from 'data/user/UserProfileStore';
-import { makeObservable, observable, computed, action, flow } from 'mobx';
+import { action, computed, flow, makeObservable, observable } from 'mobx';
 import SessionMMKVStore from './session.local.storage';
 
 const TOKEN_KEY = 'ACCESS_TOKEN';

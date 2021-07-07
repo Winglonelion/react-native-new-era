@@ -1,7 +1,14 @@
 import TitleText from 'components/Base/Text/TitleText';
 import React, { memo } from 'react';
-import { ColorValue, GestureResponderEvent, ViewStyle } from 'react-native';
-import { StyleSheet, Pressable, ActivityIndicator } from 'react-native';
+import {
+  ActivityIndicator,
+  ColorValue,
+  GestureResponderEvent,
+  Pressable,
+  StyleSheet,
+  ViewStyle,
+} from 'react-native';
+
 import Colors from 'theme/colors';
 
 interface PropTypes {

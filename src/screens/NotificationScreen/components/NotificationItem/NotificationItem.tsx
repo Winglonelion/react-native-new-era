@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import { observer } from 'mobx-react';
 import { NotificationItem as NotificationItemTypes } from '../../NotificationScreen.store';
 import ContentText from 'components/Base/Text/ContentText/ContentText';
 import CheckBox from 'components/Base/CheckBox/CheckBox';
 import Colors from 'theme/colors';
+import { distanceTime } from 'utils/date';
 
 interface PropTypes {
   item: NotificationItemTypes;
@@ -28,15 +29,15 @@ const NotificationItem: React.FC<PropTypes> = ({ item }) => {
       <View style={styles.contentCol}>
         <View style={styles.titleRow}>
           <ContentText size={14} weight={fontWeight} color={color}>
-            {item.title}
+            {item.sender.name}
           </ContentText>
           <ContentText size={12} weight={fontWeight} color={color}>
-            {item.time}
+            {distanceTime(new Date(item.time))}
           </ContentText>
         </View>
         <View>
           <ContentText size={16} weight={fontWeight} color={color}>
-            {item.message}
+            {item.title}
           </ContentText>
         </View>
       </View>

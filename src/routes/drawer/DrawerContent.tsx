@@ -1,16 +1,16 @@
 import React, { useCallback } from 'react';
-import { StyleSheet, Image, Alert } from 'react-native';
+import { Alert, Image, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
+  DrawerContentComponentProps,
   DrawerContentScrollView,
   DrawerItem,
-  DrawerContentComponentProps,
 } from '@react-navigation/drawer';
 
 import Screen from 'utils/screen';
 import ROUTES from 'routes/names';
 import Colors from 'theme/colors';
-import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import messages from './DrawerContent.messages';
 import sessionStore from 'data/session/SessionStore';
 

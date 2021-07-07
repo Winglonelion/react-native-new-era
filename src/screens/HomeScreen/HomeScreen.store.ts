@@ -1,12 +1,12 @@
-import { makeObservable, observable, computed, flow } from 'mobx';
+import { computed, flow, makeObservable, observable } from 'mobx';
 import { AxiosResponse } from 'axios';
 import {
-  GetPaidOverViewResponse,
   GetPaidHistoryOverViewResponse,
+  GetPaidOverViewResponse,
 } from 'api/paid/paid.api.types';
 import {
-  getPaidOverViewAPI,
   getPaidHistoryOverViewAPI,
+  getPaidOverViewAPI,
 } from 'api/paid/paid.api';
 
 class HomeScreenStore {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Animated } from 'react-native';
-import Svg, {
+import {
+  Svg,
   ClipPath,
   Defs,
   LinearGradient,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { Image, View } from 'react-native';
 import { observer } from 'mobx-react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

@@ -1,6 +1,6 @@
 import { isNavigationReady, navigationRef } from 'app/Navigation.ref';
 import { DrawerActions } from '@react-navigation/native';
-import { RootStackParamsList } from 'routes/stacks/RootStack';
+import { RootStackParamsList } from 'routes/stacks/RootStack.types';
 
 export function navigateTo<T>(
   name: string,

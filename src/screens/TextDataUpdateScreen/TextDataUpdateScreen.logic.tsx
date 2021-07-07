@@ -1,5 +1,5 @@
 import TextDataUpdateScreenStore from './TextDataUpdateScreen.store';
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
 
 const useTextDataUpdateScreenLogic = (key: string) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import ActionButton from 'components/Theme/Button/ActionButton/ActionButton';
 import CommonStyles from 'theme/CommonStyles';
 import DotIndicator from 'components/Theme/Indicator/DotIndicator';

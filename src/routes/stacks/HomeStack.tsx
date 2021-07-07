@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { observer } from 'mobx-react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-import { Image, View, StyleSheet } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import ROUTES from 'routes/names';
 import HomeScreen from 'screens/HomeScreen/HomeScreen';

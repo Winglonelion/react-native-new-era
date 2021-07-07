@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, RefreshControl } from 'react-native';
+import { RefreshControl, ScrollView, View } from 'react-native';
 
 import CommonStyles from 'theme/CommonStyles';
 import DateTitle from 'components/Common/DateTitle/DateTitle';

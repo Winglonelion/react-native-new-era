@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { GET_NOTIFICATIONS_ENDPOINT } from '../api.endpoint';
 import {
-  GetNotificationsResponse,
   GetNotificationParameters,
+  GetNotificationsResponse,
 } from './notification.api.types';
 
 export function getNotificationListAPI({

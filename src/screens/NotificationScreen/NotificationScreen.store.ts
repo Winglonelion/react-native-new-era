@@ -1,11 +1,11 @@
 import {
-  makeAutoObservable,
   action,
-  flow,
-  makeObservable,
-  computed,
-  observable,
   autorun,
+  computed,
+  flow,
+  makeAutoObservable,
+  makeObservable,
+  observable,
 } from 'mobx';
 import { getNotificationListAPI } from 'api/notification/notification.api';
 import {
@@ -27,6 +27,7 @@ export const FETCH_STATUS = {
 };
 
 export class NotificationItem {
+  sender: { id: string; name: string };
   id: string = '';
   time: string = '';
   title: string = '';
@@ -40,7 +41,9 @@ export class NotificationItem {
     message,
     read_time,
     selected = false,
+    sender,
   }: {
+    sender: { id: string; name: string };
     id: string;
     time: string;
     title: string;
@@ -54,6 +57,7 @@ export class NotificationItem {
     this.message = message;
     this.read_time = read_time ?? null;
     this.selected = selected;
+    this.sender = sender;
     makeAutoObservable(this, {
       toggleSelect: action,
       select: action,
@@ -206,6 +210,7 @@ function convertNotification(data: NotificationData[], selectMode?: string) {
       title: noti.title,
       message: noti.message,
       read_time: noti.read_time,
+      sender: noti.sender,
     });
   });
   return result;

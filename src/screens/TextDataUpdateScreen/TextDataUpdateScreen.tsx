@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  View,
-  TextInput,
-  StyleSheet,
   Image,
+  StyleSheet,
+  TextInput,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamsList } from 'routes/stacks/RootStack';

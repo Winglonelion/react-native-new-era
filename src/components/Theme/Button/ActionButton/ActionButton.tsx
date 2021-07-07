@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import {
-  TouchableWithoutFeedback,
   GestureResponderEvent,
-  View,
   OpaqueColorValue,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import ContentText from 'components/Base/Text/ContentText/ContentText';
 

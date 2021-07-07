@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import TitleText from 'components/Base/Text/TitleText';
 import messages from './SettingScreen.messages';
 import Colors from 'theme/colors';

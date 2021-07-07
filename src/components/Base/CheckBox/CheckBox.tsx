@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, StyleSheet, ColorValue } from 'react-native';
+import { ColorValue, StyleSheet, View } from 'react-native';
 import Colors from 'theme/colors';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';

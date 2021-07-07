@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import TitleText from 'components/Base/Text/TitleText/TitleText';
 import messages from './SalaryOverview.messages';
 import Colors from 'theme/colors';

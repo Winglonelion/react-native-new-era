@@ -4,6 +4,7 @@ export type NotificationData = {
   title: string;
   message: string;
   read_time?: string | null;
+  sender: { id: string; name: string };
 };
 export type GetNotificationsResponse = {
   data: NotificationData[];

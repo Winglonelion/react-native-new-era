@@ -1,6 +1,6 @@
-import { observable, action, makeObservable, computed } from 'mobx';
+import { action, computed, makeObservable, observable } from 'mobx';
 
-export class TextDataUpdateScreenStore {
+class TextDataUpdateScreenStore {
   text: string = '';
   key: string = '';
 

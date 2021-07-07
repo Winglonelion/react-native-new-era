@@ -2,17 +2,17 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import {
-  TouchableWithoutFeedback,
-  View,
   Image,
   StyleSheet,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import ROUTES from 'routes/names';
 import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
-import { toggleDrawer, goBack } from 'routes/actions';
+import { goBack, toggleDrawer } from 'routes/actions';
 import ProfileScreen from 'screens/ProfileScreen';
 import PersonalInfoScreen from 'screens/PersonalInfoScreen';
 import TextDataUpdateScreen, {
@@ -20,6 +20,7 @@ import TextDataUpdateScreen, {
 } from 'screens/TextDataUpdateScreen';
 import ContentText from 'components/Base/Text/ContentText/ContentText';
 import TextDataUpdateScreenStore from 'screens/TextDataUpdateScreen/TextDataUpdateScreen.store';
+import messages from './Navigation.messages';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
@@ -100,7 +101,7 @@ const textDataOptions = ({
         <TouchableWithoutFeedback onPress={submit}>
           <View>
             <ContentText size={16} color={Colors.orange}>
-              Done
+              {messages.btn_done}
             </ContentText>
           </View>
         </TouchableWithoutFeedback>
