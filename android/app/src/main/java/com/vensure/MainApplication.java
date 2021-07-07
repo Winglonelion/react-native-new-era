@@ -2,6 +2,7 @@ package com.vensure;
 
 // import com.ammarahmed.mmkv.RNMMKVJSIModulePackage;
 import com.vensure.CustomMMKVJSIModulePackage;
+import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.facebook.react.bridge.JSIModulePackage;
 
 import android.app.Application;
@@ -42,6 +43,7 @@ public class MainApplication extends Application implements ReactApplication {
           @Override
           protected JSIModulePackage getJSIModulePackage() {
               return new CustomMMKVJSIModulePackage();
+
           }
         //
       };

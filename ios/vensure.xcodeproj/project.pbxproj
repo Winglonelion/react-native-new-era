@@ -12,9 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3D471F56268C3A1200EF3B00 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D471F55268C3A1200EF3B00 /* BootSplash.storyboard */; };
-		60667CB027AF866587660BC2 /* libPods-vensure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C900FD30DD7E85B58E50DE4 /* libPods-vensure.a */; };
+		69197A8E972B13B65FBF6FE3 /* libPods-vensure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEEFC217D64978BC1462910 /* libPods-vensure.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D9308736A1267DCA07166E78 /* libPods-vensure-vensureTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE39CA7AB1C5B1C26EDCA5EA /* libPods-vensure-vensureTests.a */; };
+		888076A18D61F60F27EEFBBF /* libPods-vensure-vensureTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB63BEFA3542C5921DAABA81 /* libPods-vensure-vensureTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* vensureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vensureTests.m; sourceTree = "<group>"; };
 		01BB6D5D0F854757989D6598 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		07F0AD29733B2E190D0AE5D2 /* Pods-vensure-vensureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure-vensureTests.release.xcconfig"; path = "Target Support Files/Pods-vensure-vensureTests/Pods-vensure-vensureTests.release.xcconfig"; sourceTree = "<group>"; };
 		12AD2D69059A4E2BBF1C8374 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* vensure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vensure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = vensure/AppDelegate.h; sourceTree = "<group>"; };
@@ -39,25 +40,24 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = vensure/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = vensure/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = vensure/main.m; sourceTree = "<group>"; };
+		1DEEFC217D64978BC1462910 /* libPods-vensure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vensure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A69224E4444C69AF54B7E2 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		3514E0536DC1009F9B9892D0 /* Pods-vensure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure.release.xcconfig"; path = "Target Support Files/Pods-vensure/Pods-vensure.release.xcconfig"; sourceTree = "<group>"; };
+		32F003853F505216AC6935A5 /* Pods-vensure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure.release.xcconfig"; path = "Target Support Files/Pods-vensure/Pods-vensure.release.xcconfig"; sourceTree = "<group>"; };
 		36BC66C7BB4C496EA1BAAB20 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		38F1C3FE69D14D7C86A4B338 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		3A72C3CF9A5E4834B802134A /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		3D471F55268C3A1200EF3B00 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = vensure/BootSplash.storyboard; sourceTree = "<group>"; };
-		5C900FD30DD7E85B58E50DE4 /* libPods-vensure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vensure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63DCB945F9CF7A9033DD856E /* Pods-vensure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure.debug.xcconfig"; path = "Target Support Files/Pods-vensure/Pods-vensure.debug.xcconfig"; sourceTree = "<group>"; };
 		6BD1A8F7F20D494DA74CC64D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		7437B0F4FBDB4F17A829342A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = vensure/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		901543EC6E0140F7ADB5286E /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		9465A1296016262C825D25ED /* Pods-vensure-vensureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure-vensureTests.debug.xcconfig"; path = "Target Support Files/Pods-vensure-vensureTests/Pods-vensure-vensureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		95747F02D9F0422CB1808FB1 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		98A25C44E813ACE044C8DC1C /* Pods-vensure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure.debug.xcconfig"; path = "Target Support Files/Pods-vensure/Pods-vensure.debug.xcconfig"; sourceTree = "<group>"; };
 		9BC206EAB2E142CBA5CD71D2 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		AB63BEFA3542C5921DAABA81 /* libPods-vensure-vensureTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vensure-vensureTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF180B4D63A4094AD8C3106 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		B26BA1FE294DE0F28848D6DB /* Pods-vensure-vensureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure-vensureTests.debug.xcconfig"; path = "Target Support Files/Pods-vensure-vensureTests/Pods-vensure-vensureTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BB64AF76E1A61617565B7610 /* Pods-vensure-vensureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vensure-vensureTests.release.xcconfig"; path = "Target Support Files/Pods-vensure-vensureTests/Pods-vensure-vensureTests.release.xcconfig"; sourceTree = "<group>"; };
 		C033154300254704B2584C7C /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		CE39CA7AB1C5B1C26EDCA5EA /* libPods-vensure-vensureTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vensure-vensureTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E96CCC5EB5486BA2430425 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		E4FD4C7A645C465D8387C6B3 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9308736A1267DCA07166E78 /* libPods-vensure-vensureTests.a in Frameworks */,
+				888076A18D61F60F27EEFBBF /* libPods-vensure-vensureTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60667CB027AF866587660BC2 /* libPods-vensure.a in Frameworks */,
+				69197A8E972B13B65FBF6FE3 /* libPods-vensure.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5C900FD30DD7E85B58E50DE4 /* libPods-vensure.a */,
-				CE39CA7AB1C5B1C26EDCA5EA /* libPods-vensure-vensureTests.a */,
+				1DEEFC217D64978BC1462910 /* libPods-vensure.a */,
+				AB63BEFA3542C5921DAABA81 /* libPods-vensure-vensureTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,10 +183,10 @@
 		CF088522D1BA8F07969F7CD0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				98A25C44E813ACE044C8DC1C /* Pods-vensure.debug.xcconfig */,
-				3514E0536DC1009F9B9892D0 /* Pods-vensure.release.xcconfig */,
-				B26BA1FE294DE0F28848D6DB /* Pods-vensure-vensureTests.debug.xcconfig */,
-				BB64AF76E1A61617565B7610 /* Pods-vensure-vensureTests.release.xcconfig */,
+				63DCB945F9CF7A9033DD856E /* Pods-vensure.debug.xcconfig */,
+				32F003853F505216AC6935A5 /* Pods-vensure.release.xcconfig */,
+				9465A1296016262C825D25ED /* Pods-vensure-vensureTests.debug.xcconfig */,
+				07F0AD29733B2E190D0AE5D2 /* Pods-vensure-vensureTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -198,12 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "vensureTests" */;
 			buildPhases = (
-				AAACE5EC96D68A7C7F779349 /* [CP] Check Pods Manifest.lock */,
+				7DCF463DF8E29C471BE8149E /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				188590EA5E2248809A85B565 /* [CP] Embed Pods Frameworks */,
-				87BDA685275F0C6EDCFF8E71 /* [CP] Copy Pods Resources */,
+				19A0877AF10FE76DFFCB8442 /* [CP] Embed Pods Frameworks */,
+				29A6097C2DB62DFCFE178FCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,14 +219,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "vensure" */;
 			buildPhases = (
-				AC30A88BFE2E1ACE3BF0DDAF /* [CP] Check Pods Manifest.lock */,
+				668F71388DB400EC9392C75A /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				67E96BE0EC7F1F2677F16D34 /* [CP] Embed Pods Frameworks */,
-				BBBE5830335CD3326E4DECF4 /* [CP] Copy Pods Resources */,
+				F976F97B354E13ADA3B1C2CF /* [CP] Embed Pods Frameworks */,
+				27355238B143E58B1CD58BFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,7 +308,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		188590EA5E2248809A85B565 /* [CP] Embed Pods Frameworks */ = {
+		19A0877AF10FE76DFFCB8442 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,24 +325,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vensure-vensureTests/Pods-vensure-vensureTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		67E96BE0EC7F1F2677F16D34 /* [CP] Embed Pods Frameworks */ = {
+		27355238B143E58B1CD58BFF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		87BDA685275F0C6EDCFF8E71 /* [CP] Copy Pods Resources */ = {
+		29A6097C2DB62DFCFE178FCB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,29 +359,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vensure-vensureTests/Pods-vensure-vensureTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AAACE5EC96D68A7C7F779349 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-vensure-vensureTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC30A88BFE2E1ACE3BF0DDAF /* [CP] Check Pods Manifest.lock */ = {
+		668F71388DB400EC9392C75A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,21 +381,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BBBE5830335CD3326E4DECF4 /* [CP] Copy Pods Resources */ = {
+		7DCF463DF8E29C471BE8149E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vensure-vensureTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F976F97B354E13ADA3B1C2CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vensure/Pods-vensure-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -472,7 +472,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B26BA1FE294DE0F28848D6DB /* Pods-vensure-vensureTests.debug.xcconfig */;
+			baseConfigurationReference = 9465A1296016262C825D25ED /* Pods-vensure-vensureTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -499,7 +499,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB64AF76E1A61617565B7610 /* Pods-vensure-vensureTests.release.xcconfig */;
+			baseConfigurationReference = 07F0AD29733B2E190D0AE5D2 /* Pods-vensure-vensureTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -523,7 +523,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98A25C44E813ACE044C8DC1C /* Pods-vensure.debug.xcconfig */;
+			baseConfigurationReference = 63DCB945F9CF7A9033DD856E /* Pods-vensure.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -552,7 +552,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3514E0536DC1009F9B9892D0 /* Pods-vensure.release.xcconfig */;
+			baseConfigurationReference = 32F003853F505216AC6935A5 /* Pods-vensure.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

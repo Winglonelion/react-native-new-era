@@ -12,10 +12,11 @@ import { name as appName } from './app.json';
 
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
+  'axios base',
 ]);
 
 // TODO: this is setup for networking mock, remove it when implementing API
-import './mocks/networking';
+import './src/mocks/networking';
 
 enableScreens();
 

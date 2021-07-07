@@ -1,1 +1,1 @@
-export { default as default } from 'app';
+export { default } from 'app';
