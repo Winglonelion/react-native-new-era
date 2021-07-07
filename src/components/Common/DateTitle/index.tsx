@@ -1,1 +1,1 @@
-export { default as default } from './DateTitle';
+export { default } from './DateTitle';

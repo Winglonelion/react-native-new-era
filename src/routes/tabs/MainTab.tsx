@@ -2,11 +2,11 @@ import React, { useCallback } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ROUTES from 'routes/names';
 
-import NotificationScreen from 'screens/NotificationScreen';
 import HomeStack from 'routes/stacks/HomeStack';
 import Colors from 'theme/colors';
 import Icon from 'react-native-vector-icons/Feather';
 import ProfileStack from 'routes/stacks/ProfileStack';
+import NotificationStack from 'routes/stacks/NotificationStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -62,8 +62,8 @@ const MainTab = () => {
           tabBarIcon: renderNotificationIcon,
           title: 'Notification',
         }}
-        name={ROUTES.NOTIFICATION}
-        component={NotificationScreen}
+        name={ROUTES.NOTIFICATION_STACK}
+        component={NotificationStack}
       />
     </Tab.Navigator>
   );

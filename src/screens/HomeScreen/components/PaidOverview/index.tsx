@@ -1,1 +1,1 @@
-export { default as default } from './PaidOverView';
+export { default } from './PaidOverView';

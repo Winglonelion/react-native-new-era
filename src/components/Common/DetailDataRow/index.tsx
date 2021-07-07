@@ -1,1 +1,1 @@
-export { default as default } from './DetailDataRow';
+export { default } from './DetailDataRow';

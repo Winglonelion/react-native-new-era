@@ -8,6 +8,7 @@ import ROUTES from '../names';
 import UnAuthorizedStack from './UnAuthorizedStack';
 import MainDrawer from 'routes/drawer/MainDrawer';
 import { PressEvent } from 'types/events';
+import { TextInputProps } from 'react-native';
 
 export interface RootStackParamsList extends ParamListBase {
   LOGIN: undefined;
@@ -18,6 +19,7 @@ export interface RootStackParamsList extends ParamListBase {
     onComplete?: (text: string) => void;
     onCancel?: PressEvent;
     validator?: (text: string) => { error?: Error };
+    inputProps?: TextInputProps;
   };
 }
 

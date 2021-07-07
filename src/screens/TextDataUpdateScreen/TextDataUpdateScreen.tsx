@@ -27,25 +27,27 @@ interface PropTypes {
 }
 
 const TextDataUpdateScreen: React.FC<PropTypes> = ({ route }) => {
-  // const { onComplete, onCancel } = route.params;
-  const { text, setText, clearText, error, clearError, inputRef } =
+  const { setText, clearText, error, clearError, inputRef, showClearButton } =
     useTextDataUpdateScreenLogic(route.key);
+  const { inputProps = {} } = route.params;
+
+  console.log('render TextUp', showClearButton);
 
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
+          {...inputProps}
           ref={inputRef}
           style={styles.textInput}
           autoFocus
-          value={text}
           onChangeText={setText}
           clearButtonMode="never"
           onFocus={clearError}
           blurOnSubmit
         />
         <View style={styles.clearBox}>
-          {!!text && (
+          {showClearButton && (
             <TouchableOpacity onPress={clearText}>
               <Image
                 source={require('images/clear_brown.png')}

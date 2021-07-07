@@ -1,1 +1,1 @@
-export { default as default } from './PayHistoryItem';
+export { default } from './PayHistoryItem';

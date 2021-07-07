@@ -13,6 +13,7 @@ const Colors = {
   disabled: '#F8F8F8',
   orange: '#FF894D',
   error: '#EF5858',
+  uncheck: '#C4C1C0',
 };
 
 export default Colors;

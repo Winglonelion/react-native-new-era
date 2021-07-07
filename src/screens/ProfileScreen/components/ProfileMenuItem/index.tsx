@@ -1,1 +1,1 @@
-export { default as default } from './ProfileMenuItem';
+export { default } from './ProfileMenuItem';

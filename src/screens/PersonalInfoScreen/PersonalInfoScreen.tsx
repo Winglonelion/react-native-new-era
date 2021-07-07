@@ -15,6 +15,7 @@ import { navigateTo } from 'routes/actions';
 import ROUTES from 'routes/names';
 import SelectMaritalStatus from 'modals/SelectMaritalStatus';
 import { MARITAL_STATUSES } from 'data/user/UserProfile.values';
+import { frame } from 'utils/frames';
 
 type PropTypes = {};
 
@@ -28,7 +29,8 @@ const PersonalInfoScreen: React.FC<PropTypes> = () => {
     isModalMartialStatusVisible,
     openModalMartialStatus,
   } = usePersonalInfoScreenLogic();
-  const navigateToEditNickName = useCallback(() => {
+  const navigateToEditNickName = useCallback(async () => {
+    await frame();
     navigateTo(ROUTES.TEXT_DATA_UPDATE_SCREEN, {
       title: 'Nickname',
       onComplete: updateNickname,

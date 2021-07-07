@@ -14,8 +14,27 @@ const useTextDataUpdateScreenLogic = (key: string) => {
     store.setError('');
   }, [store]);
 
-  const { text, setText, clear, error } = store;
-  return { text, setText, clearText: clear, error, clearError, inputRef };
+  const setText = useCallback(
+    (text: string) => {
+      inputRef.current?.setNativeProps({ text });
+      store.setText(text);
+    },
+    [store],
+  );
+
+  const clearText = useCallback(() => {
+    store.clear();
+    inputRef.current?.setNativeProps({ text: '' });
+  }, [store]);
+
+  return {
+    setText,
+    inputRef,
+    clearText,
+    clearError,
+    error: store.error,
+    showClearButton: store.showClearButton,
+  };
 };
 
 export default useTextDataUpdateScreenLogic;

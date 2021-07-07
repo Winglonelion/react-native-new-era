@@ -1,1 +1,1 @@
-export { default as default } from './NotificationScreen';
+export { default } from './NotificationScreen';

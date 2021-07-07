@@ -1,1 +1,1 @@
-export { default as default } from './SwitchDataRow';
+export { default } from './SwitchDataRow';

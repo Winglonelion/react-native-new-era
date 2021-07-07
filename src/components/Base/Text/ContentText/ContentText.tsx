@@ -6,16 +6,16 @@ import Colors from 'theme/colors';
 interface PropTypes extends TextProps {
   color?: ColorValue;
   size?: number;
+  weight?: '100' | '400' | '500' | '600' | 'bold' | 'normal';
 }
 
 const ContentText: React.FC<PropTypes> = memo(
-  ({ children, style, size, color }) => {
+  ({ children, style, size = 14, color = Colors.black, weight = 'normal' }) => {
     return (
       <Text
         style={[
           styles.text,
-          size ? { fontSize: size } : undefined,
-          color ? { color } : undefined,
+          { fontSize: size, color, fontWeight: weight },
           style,
         ]}>
         {children}
@@ -26,8 +26,6 @@ const ContentText: React.FC<PropTypes> = memo(
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 14,
-    color: Colors.black,
     lineHeight: 22,
     fontFamily: FontFamily.Helvetica,
   },

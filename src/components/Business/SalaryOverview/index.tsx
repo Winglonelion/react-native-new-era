@@ -1,1 +1,1 @@
-export { default as default } from './SalaryOverview';
+export { default } from './SalaryOverview';

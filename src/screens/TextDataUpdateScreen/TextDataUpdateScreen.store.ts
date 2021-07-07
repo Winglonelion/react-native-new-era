@@ -1,4 +1,4 @@
-import { observable, action, makeObservable } from 'mobx';
+import { observable, action, makeObservable, computed } from 'mobx';
 
 export class TextDataUpdateScreenStore {
   text: string = '';
@@ -7,7 +7,13 @@ export class TextDataUpdateScreenStore {
   error: string = '';
   errorHandler: () => void;
 
-  constructor(key: string, errorHandler: () => void) {
+  constructor({
+    key,
+    errorHandler,
+  }: {
+    key: string;
+    errorHandler: () => void;
+  }) {
     this.key = key;
     this.errorHandler = errorHandler;
     makeObservable(this, {
@@ -17,7 +23,12 @@ export class TextDataUpdateScreenStore {
       clear: action,
       setText: action,
       setError: action,
+      showClearButton: computed,
     });
+  }
+
+  get showClearButton() {
+    return this.text.length > 0;
   }
 
   validate = (validator?: (text: string) => { error?: Error }) => {
@@ -45,9 +56,15 @@ export class TextDataUpdateScreenStore {
 
   static provideStore(key: string, errorHandler: () => void) {
     if (TextDataUpdateScreenStore.currentKey === key) {
+      if (!TextDataUpdateScreenStore.currentStore) {
+        TextDataUpdateScreenStore.currentStore = new TextDataUpdateScreenStore({
+          key,
+          errorHandler,
+        });
+      }
       return TextDataUpdateScreenStore.currentStore;
     }
-    const store = new TextDataUpdateScreenStore(key, errorHandler);
+    const store = new TextDataUpdateScreenStore({ key, errorHandler });
     TextDataUpdateScreenStore.currentStore = store;
     return store;
   }
@@ -56,8 +73,7 @@ export class TextDataUpdateScreenStore {
     return TextDataUpdateScreenStore.currentStore;
   }
 
-  static currentStore: TextDataUpdateScreenStore =
-    new TextDataUpdateScreenStore('', () => null);
+  static currentStore: TextDataUpdateScreenStore;
   static currentKey: string = '';
 }
 

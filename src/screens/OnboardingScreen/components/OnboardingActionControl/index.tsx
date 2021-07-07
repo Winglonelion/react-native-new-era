@@ -1,1 +1,1 @@
-export { default as default } from './OnboardingActionControl';
+export { default } from './OnboardingActionControl';
