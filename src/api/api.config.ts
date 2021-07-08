@@ -21,7 +21,7 @@ const l10n = {
  * setup axios included content-type & deviceId
  */
 const init = () => {
-  console.log('-------- Axios INIT');
+  // console.log('-------- Axios INIT');
   const headers: AxiosRequestConfig['headers'] = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const init = () => {
   const auth = Axios.defaults.headers?.Authorization;
   if (auth) {
     headers.Authorization = auth;
-    console.log('-------- Axios INIT with AUTH');
+    // console.log('-------- Axios INIT with AUTH');
   }
 
   Axios.defaults.headers = headers;
@@ -59,7 +59,7 @@ const setBaseUrl = (baseUrl?: string) => {
 
   Axios.defaults.baseURL = newBaseUrl;
 
-  console.warn('-------- axios baseURL', newBaseUrl);
+  // console.warn('-------- axios baseURL', newBaseUrl);
 
   return newBaseUrl;
 };
@@ -70,7 +70,7 @@ const clearBaseUrl = () => {
 
 const setHeaderToken = (newToken: string, from: string) => {
   if (!Axios.defaults.headers) {
-    console.warn('-------- axios headers empty');
+    // console.warn('-------- axios headers empty');
     return;
   }
 

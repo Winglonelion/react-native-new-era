@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound check snapshot should match snapshot 1`] = `
+<View
+  pointerEvents="none"
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "minHeight": 100,
+        "minWidth": 100,
+        "paddingHorizontal": 2,
+      },
+      undefined,
+    ]
+  }
+>
+  <Icon
+    allowFontScaling={false}
+    name="inbox"
+    size={100}
+    style={
+      Object {
+        "color": "#F0EDEB",
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#9C9079",
+          "fontSize": 15,
+          "letterSpacing": -0.4,
+          "lineHeight": 29.57142857142857,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;

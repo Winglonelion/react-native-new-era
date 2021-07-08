@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
-import CheckBox from 'components/Base/CheckBox/CheckBox';
+import CheckBox from 'components/Base/CheckBox';
 import { observer } from 'mobx-react';
 import Colors from 'theme/colors';
 import ContentText from 'components/Base/Text/ContentText';

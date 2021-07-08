@@ -18,8 +18,8 @@ describe('NotFound check snapshot', () => {
   });
 });
 describe('NotFound check render correctly', () => {
-  test('should contain 1 LottieView', () => {
+  test('should contain 1 Icon', () => {
     const { wrapper } = setup();
-    expect(wrapper.find('LottieView')).toHaveLength(1);
+    expect(wrapper.find('Icon')).toHaveLength(1);
   });
 });

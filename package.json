@@ -9,6 +9,8 @@
     "test": "jest",
     "link:assets": "node node_modules/react-native-asset/lib/cli.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --cache",
+    "tslint": "tsc -p ./ --noEmit --skipLibCheck",
+    "open:coverage": "open coverage/lcov-report/index.html",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -45,31 +47,35 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/d3-shape": "^3.0.0",
-    "@types/enzyme": "^3.10.8",
-    "@types/jest": "^26.0.23",
+    "@types/enzyme": "^3.10.9",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.24",
     "@types/lodash": "^4.14.170",
     "@types/react-native": "^0.64.5",
     "@types/react-native-vector-icons": "^6.4.7",
     "@types/react-test-renderer": "^16.9.2",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/parser": "^4.28.2",
-    "babel-jest": "^26.6.3",
+    "babel-jest": "^27.0.6",
     "babel-plugin-module-resolver": "^4.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
     "eslint": "^7.14.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-native": "^3.11.0",
     "husky": "^7.0.0",
-    "jest": "^26.6.3",
+    "jest": "^27.0.6",
     "lint-staged": "^11.0.0",
     "metro-react-native-babel-preset": "^0.64.0",
     "pretty-quick": "^3.1.1",
+    "react-dom": "17.0.1",
     "react-native-asset": "^2.0.1",
     "react-native-flipper": "^0.95.0",
     "react-test-renderer": "17.0.1",
+    "ts-jest": "^27.0.3",
     "typescript": "^3.8.3"
   },
   "resolutions": {
@@ -84,18 +90,8 @@
     "*.{js,jsx,ts,tsx}": [
       "pretty-quick --staged",
       "yarn lint --fix",
+      "bash -c tsc --skipLibCheck -p \"ts.config.json\" --noEmit",
       "git add"
-    ]
-  },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
     ]
   }
 }

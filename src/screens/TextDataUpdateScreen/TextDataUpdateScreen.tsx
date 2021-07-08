@@ -7,7 +7,6 @@ import {
   View,
 } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
-import { RootStackParamsList } from 'routes/stacks/RootStack';
 import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack';
 import { ROUTES_TYPES } from 'routes/names';
 import useTextDataUpdateScreenLogic from './TextDataUpdateScreen.logic';
@@ -16,6 +15,7 @@ import CommonStyles from 'theme/CommonStyles';
 import { FontFamily } from 'theme/CommonFonts';
 import { observer } from 'mobx-react';
 import ContentText from 'components/Base/Text/ContentText/ContentText';
+import { RootStackParamsList } from 'routes/stacks/RootStack.types';
 
 export type ScreenRouteProp = RouteProp<
   RootStackParamsList,

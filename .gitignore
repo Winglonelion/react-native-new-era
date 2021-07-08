@@ -63,3 +63,4 @@ buck-out/
 .vscode/*
 
 .eslintcache
+coverage/*
