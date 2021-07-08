@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { RefreshControl, ScrollView, View } from 'react-native';
 
 import CommonStyles from 'theme/CommonStyles';
@@ -8,14 +8,24 @@ import PaidOverview from './components/PaidOverview';
 import useHomeScreenLogic from './HomeScreen.logic';
 import { observer } from 'mobx-react';
 import homeScreenStore from './HomeScreen.store';
-// import styles from './HomeScreen.styles';
+import { navigateTo } from 'routes/actions';
+import ROUTES from 'routes/names';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 type PropTypes = {};
 
 const HomeScreen: React.FC<PropTypes> = () => {
   const { reloadHomeData } = useHomeScreenLogic();
+
+  const onPressPaidOverview = useCallback(() => {
+    navigateTo(ROUTES.PAID_DETAIL_SCREEN, {
+      data: homeScreenStore.paidOverViewData,
+    });
+  }, []);
+
   return (
     <View style={CommonStyles.container}>
       <ScrollView
+        bounces={false}
         showsVerticalScrollIndicator={false}
         refreshControl={
           <RefreshControl
@@ -24,12 +34,16 @@ const HomeScreen: React.FC<PropTypes> = () => {
           />
         }>
         <DateTitle />
-        <PaidOverview
-          overViewData={homeScreenStore.paidOverViewData}
-          loading={homeScreenStore.homeLoading}
-        />
+        <TouchableWithoutFeedback
+          disabled={homeScreenStore.loadingPaidOverView}
+          onPress={onPressPaidOverview}>
+          <PaidOverview
+            overviewData={homeScreenStore.paidOverViewData}
+            loading={homeScreenStore.homeLoading}
+          />
+        </TouchableWithoutFeedback>
         <PayHistoryOverView
-          overViewData={homeScreenStore.paidHistoryOverViewData}
+          overviewData={homeScreenStore.paidHistoryOverViewData}
           loading={homeScreenStore.homeLoading}
         />
       </ScrollView>

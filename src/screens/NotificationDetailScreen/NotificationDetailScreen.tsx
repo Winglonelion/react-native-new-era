@@ -27,7 +27,7 @@ const NotificationDetailScreen: React.FC<PropTypes> = ({ route }) => {
 
   return (
     <View style={CommonStyles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
           <View style={styles.timeBox}>
             <ContentText size={12} textAlign="right" color={Colors.lightBrown}>

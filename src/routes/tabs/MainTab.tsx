@@ -53,6 +53,7 @@ const MainTab = () => {
         options={{
           tabBarIcon: renderHomeIcon,
           title: 'Home',
+          // tabBarVisible: false,
         }}
         name={ROUTES.HOME_STACK}
         component={HomeStack}

@@ -10,12 +10,12 @@ import { GetPaidHistoryOverViewResponse } from 'api/paid/paid.api.types';
 
 interface PropTypes {
   loading?: boolean;
-  overViewData?: GetPaidHistoryOverViewResponse;
+  overviewData?: GetPaidHistoryOverViewResponse;
 }
 
 const PayHistoryOverView: React.FC<PropTypes> = ({
   loading,
-  overViewData: overviewData,
+  overviewData: overviewData,
 }) => {
   return (
     <View style={styles.shadowBox}>

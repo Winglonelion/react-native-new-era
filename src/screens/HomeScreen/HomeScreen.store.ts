@@ -11,13 +11,20 @@ import {
 
 class HomeScreenStore {
   paidOverViewData: GetPaidOverViewResponse = {
-    detail: [],
     gross: NaN,
-    hours: NaN,
-    over_time: NaN,
-    rate: NaN,
     regular: NaN,
+    over_time: NaN,
+    hours: NaN,
+    rate: NaN,
     take_home: NaN,
+    detail: [
+      { type: 'taxes', value: NaN },
+      { type: 'benefits', value: NaN },
+      { type: 'retirements', value: NaN },
+      { type: 'other', value: NaN },
+      { type: 'taxes', value: NaN },
+      { type: 'taxes', value: NaN },
+    ],
   };
   loadingPaidOverView: boolean = false;
 

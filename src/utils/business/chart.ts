@@ -7,5 +7,5 @@ const MAP_COLOR: Record<string, string> = {
 };
 
 export function mapPieColor(type: string) {
-  return MAP_COLOR[type];
+  return MAP_COLOR[type] ?? 'transparent';
 }

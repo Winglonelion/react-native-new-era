@@ -2,6 +2,7 @@ import { PressEvent } from 'types/events';
 import { TextInputProps } from 'react-native';
 import { ParamListBase } from '@react-navigation/native';
 import { NotificationItem } from 'screens/NotificationScreen/NotificationScreen.store';
+import { GetPaidOverViewResponse } from 'api/paid/paid.api.types';
 
 export interface RootStackParamsList extends ParamListBase {
   LOGIN: undefined;
@@ -14,7 +15,12 @@ export interface RootStackParamsList extends ParamListBase {
     validator?: (text: string) => { error?: Error };
     inputProps?: TextInputProps;
   };
+
   NOTIFICATION_DETAIL_SCREEN: {
     data: NotificationItem;
+  };
+
+  PAID_DETAIL_SCREEN: {
+    data: GetPaidOverViewResponse;
   };
 }

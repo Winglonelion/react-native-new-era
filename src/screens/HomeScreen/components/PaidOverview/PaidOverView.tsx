@@ -7,15 +7,13 @@ import CommonStyles from 'theme/CommonStyles';
 import SalaryOverview from 'components/Business/SalaryOverview';
 import { observer } from 'mobx-react';
 import { GetPaidOverViewResponse } from 'api/paid/paid.api.types';
-import { capitalize } from 'lodash';
-import { mapPieColor } from 'utils/bussiness/chart';
 
 interface PropTypes {
-  overViewData?: GetPaidOverViewResponse;
+  overviewData?: GetPaidOverViewResponse;
   loading?: boolean;
 }
 
-const PaidOverview: React.FC<PropTypes> = ({ overViewData, loading }) => {
+const PaidOverview: React.FC<PropTypes> = ({ overviewData, loading }) => {
   return (
     <View style={styles.shadowBox}>
       <View style={styles.container}>
@@ -27,7 +25,7 @@ const PaidOverview: React.FC<PropTypes> = ({ overViewData, loading }) => {
             style={styles.icon}
           />
         </View>
-        <SalaryOverview data={rebuildData(overViewData)} loading={loading} />
+        <SalaryOverview overviewData={overviewData} loading={loading} />
       </View>
     </View>
   );
@@ -61,20 +59,5 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 });
-
-function rebuildData(data?: GetPaidOverViewResponse) {
-  if (!data) return undefined;
-  return {
-    take_home: data.take_home,
-    gross: data.gross,
-    hours: data.hours,
-    rate: data.rate,
-    dataChart: data.detail.map(({ type, value }) => ({
-      key: capitalize(type),
-      value,
-      svg: { fill: mapPieColor(type) },
-    })),
-  };
-}
 
 export default observer(PaidOverview);

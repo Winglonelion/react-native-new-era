@@ -10,6 +10,10 @@ import userProfileStore from 'data/user/UserProfileStore';
 import SettingScreen from 'screens/SettingScreen/SettingScreen';
 import FeedbackScreen from 'screens/FeedbackScreen/FeedbackScreen';
 import Colors from 'theme/colors';
+import PaidDetailScreen from 'screens/PaidDetailScreen';
+import PersonalInfoScreen from 'screens/PersonalInfoScreen';
+import TextDataUpdateScreen from 'screens/TextDataUpdateScreen';
+import TextDataOptions from 'screens/TextDataUpdateScreen/components/TextDataOptions';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
@@ -23,8 +27,10 @@ const AuthorizedStack = () => {
       }
       screenOptions={{
         gestureEnabled: false,
+        // gestureEnabled: true,
         headerTintColor: Colors.lightBrown,
         headerBackTitleVisible: false,
+        headerHideShadow: true,
       }}>
       <Stack.Screen
         options={{ headerShown: false }}
@@ -44,6 +50,27 @@ const AuthorizedStack = () => {
         component={SettingScreen}
       />
       <Stack.Screen name={ROUTES.FEEDBACK_SCREEN} component={FeedbackScreen} />
+
+      <Stack.Screen
+        options={{
+          title: 'Pay',
+        }}
+        name={ROUTES.PAID_DETAIL_SCREEN}
+        component={PaidDetailScreen}
+      />
+      {/* profile */}
+      <Stack.Screen
+        options={{
+          title: 'Personal Info',
+        }}
+        name={ROUTES.PERSONAL_INFO_SCREEN}
+        component={PersonalInfoScreen}
+      />
+      <Stack.Screen
+        options={TextDataOptions}
+        name={ROUTES.TEXT_DATA_UPDATE_SCREEN}
+        component={TextDataUpdateScreen}
+      />
     </Stack.Navigator>
   );
 };

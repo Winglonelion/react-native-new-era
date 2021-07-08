@@ -17,7 +17,6 @@ const paid_overview: GetPaidOverViewResponse = {
   hours: 80,
   rate: 30,
   detail: [
-    //
     { type: 'taxes', value: 357.74 },
     { type: 'benefits', value: 73 },
     { type: 'retirements', value: 40 },
