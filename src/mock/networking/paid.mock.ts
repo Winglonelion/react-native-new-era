@@ -9,7 +9,7 @@ import {
   GetPaidOverViewResponse,
 } from 'api/paid/paid.api.types';
 
-const paid_overview: GetPaidOverViewResponse = {
+export const paid_overview: GetPaidOverViewResponse = {
   take_home: 1000,
   gross: 1800,
   regular: 1500,
@@ -25,7 +25,7 @@ const paid_overview: GetPaidOverViewResponse = {
   ],
 };
 
-const paid_history_overview: GetPaidHistoryOverViewResponse = [
+export const paid_history_overview: GetPaidHistoryOverViewResponse = [
   //
   { date: '2021-01-31', take_home: 2200.01, hours: 180, gross: 2400 },
   { date: '2021-02-28', take_home: 2200.01, hours: 180, gross: 2400 },
