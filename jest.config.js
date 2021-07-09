@@ -5,6 +5,7 @@ function ignoreModules() {
   const list = [
     '@react-native',
     'react-native',
+    'd3-.*',
     'react-native-vector-icons',
     'react-native-reanimated',
     'react-native-config',
@@ -57,13 +58,12 @@ module.exports = {
   coveragePathIgnorePatterns: [
     //
     'src/mock',
-    // './src/*/*.types.{ts,tsx}',
     'src/index.tsx',
     'node_modules/*',
   ],
   coverageReporters: ['json', 'lcov', 'text-summary', 'clover'],
   coverageDirectory: 'coverage',
-  // verbose: true,
+  verbose: true,
   testEnvironment: 'jsdom',
   globalSetup: './jest.setup.js',
 };

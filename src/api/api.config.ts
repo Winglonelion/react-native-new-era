@@ -87,11 +87,11 @@ const setHeaderToken = (newToken: string, from: string) => {
     return;
   }
 
-  !global.jest &&
-    console.log(`-------- axios setToken from ${from}`, {
-      currentToken: Axios?.defaults?.headers?.Authorization || 'EMPTY',
-      newToken: bearerToken,
-    });
+  // !global.jest &&
+  //   console.log(`-------- axios setToken from ${from}`, {
+  //     currentToken: Axios?.defaults?.headers?.Authorization || 'EMPTY',
+  //     newToken: bearerToken,
+  //   });
 
   Axios.defaults.headers.Authorization = bearerToken;
 };

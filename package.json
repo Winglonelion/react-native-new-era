@@ -90,7 +90,6 @@
     "*.{js,jsx,ts,tsx}": [
       "pretty-quick --staged",
       "yarn lint --fix",
-      "bash -c tsc -p \"ts.config.json\" --skipLibCheck  --noEmit",
       "git add"
     ]
   }
