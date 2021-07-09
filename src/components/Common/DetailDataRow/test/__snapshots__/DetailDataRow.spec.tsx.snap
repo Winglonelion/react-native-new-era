@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailDataRow check snapshot should match snapshot with props 1`] = `
+<TouchableWithoutFeedback
+  disabled={false}
+  onPress={[MockFunction]}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "paddingHorizontal": 15,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Memo()
+        size={16}
+        style={
+          Object {
+            "lineHeight": 30,
+          }
+        }
+      >
+        test menu
+      </Memo()>
+      <Memo()
+        size={16}
+        style={
+          Array [
+            Object {
+              "lineHeight": 30,
+            },
+            Object {
+              "color": "#9C9079",
+            },
+          ]
+        }
+      >
+        test data
+      </Memo()>
+    </View>
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/images/chevron_right_brown.png",
+        }
+      }
+      style={
+        Object {
+          "height": 24,
+          "marginLeft": 8,
+          "resizeMode": "contain",
+          "width": 24,
+        }
+      }
+    />
+  </View>
+</TouchableWithoutFeedback>
+`;
+
+exports[`DetailDataRow check snapshot should match snapshot without not strong chevron 1`] = `
+<TouchableWithoutFeedback
+  disabled={false}
+  onPress={[MockFunction]}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "paddingHorizontal": 15,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Memo()
+        size={16}
+        style={
+          Object {
+            "lineHeight": 30,
+          }
+        }
+      >
+        test menu
+      </Memo()>
+      <Memo()
+        size={16}
+        style={
+          Array [
+            Object {
+              "lineHeight": 30,
+            },
+            Object {
+              "color": "#9C9079",
+            },
+          ]
+        }
+      >
+        —
+      </Memo()>
+    </View>
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/images/chevron_right_light_brown.png",
+        }
+      }
+      style={
+        Object {
+          "height": 24,
+          "marginLeft": 8,
+          "resizeMode": "contain",
+          "width": 24,
+        }
+      }
+    />
+  </View>
+</TouchableWithoutFeedback>
+`;
+
+exports[`DetailDataRow check snapshot should match snapshot without props and loading 1`] = `
+<TouchableWithoutFeedback
+  disabled={true}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "paddingHorizontal": 15,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Memo()
+        size={16}
+        style={
+          Object {
+            "lineHeight": 30,
+          }
+        }
+      >
+        test menu
+      </Memo()>
+      <Memo()
+        size={16}
+        style={
+          Array [
+            Object {
+              "lineHeight": 30,
+            },
+            Object {
+              "color": "#9C9079",
+            },
+          ]
+        }
+      >
+        —
+      </Memo()>
+    </View>
+  </View>
+</TouchableWithoutFeedback>
+`;

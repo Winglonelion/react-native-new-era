@@ -1,11 +1,9 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { format } from 'date-fns';
-import TitleText, {
-  TitleTextPropTypes,
-} from 'components/Base/Text/TitleText/TitleText';
+import TitleText, { TitleTextPropTypes } from 'components/Base/Text/TitleText';
 
-interface PropTypes extends TitleTextPropTypes {
+export interface PropTypes extends TitleTextPropTypes {
   date?: Date;
 }
 

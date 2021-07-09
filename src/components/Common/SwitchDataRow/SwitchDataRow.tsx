@@ -3,14 +3,14 @@ import { StyleSheet, Switch, View } from 'react-native';
 import ContentText from 'components/Base/Text/ContentText';
 import Colors from 'theme/colors';
 
-interface PropTypes {
+export interface PropTypes {
   title: string;
   onChange?: (value: boolean) => void;
   isEnabled: boolean;
 }
 
 const SwitchDataRow: React.FC<PropTypes> = memo(
-  ({ title, onChange, isEnabled = true }) => {
+  ({ title, onChange, isEnabled }) => {
     return (
       <View style={styles.container}>
         <View style={styles.content}>

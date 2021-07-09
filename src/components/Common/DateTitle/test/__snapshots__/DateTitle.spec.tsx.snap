@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateTitle check snapshot should match snapshot with props 1`] = `
+<View>
+  <Memo()
+    level="h2"
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Tue 07, 2021
+  </Memo()>
+</View>
+`;
+
+exports[`DateTitle check snapshot should match snapshot without props and loading 1`] = `
+<View>
+  <Memo()
+    level="h3"
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Tue 07, 2021
+  </Memo()>
+</View>
+`;

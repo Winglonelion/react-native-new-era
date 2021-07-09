@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchDataRow check snapshot should match snapshot isEnabled false 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "paddingHorizontal": 15,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <Memo()
+      size={16}
+      style={
+        Object {
+          "lineHeight": 30,
+        }
+      }
+    >
+      switch title 2
+    </Memo()>
+    <Switch
+      ios_backgroundColor="#373F41"
+      onValueChange={[MockFunction]}
+      thumbColor="#f4f3f4"
+      trackColor={
+        Object {
+          "false": "#DADFE6",
+          "true": "#FF894D",
+        }
+      }
+      value={false}
+    />
+  </View>
+</View>
+`;
+
+exports[`SwitchDataRow check snapshot should match snapshot with props 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "paddingHorizontal": 15,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <Memo()
+      size={16}
+      style={
+        Object {
+          "lineHeight": 30,
+        }
+      }
+    >
+      switch title
+    </Memo()>
+    <Switch
+      ios_backgroundColor="#373F41"
+      onValueChange={[MockFunction]}
+      thumbColor="#FFFFFF"
+      trackColor={
+        Object {
+          "false": "#DADFE6",
+          "true": "#FF894D",
+        }
+      }
+      value={true}
+    />
+  </View>
+</View>
+`;
+
+exports[`SwitchDataRow check snapshot should match snapshot without onChange 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "paddingHorizontal": 15,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <Memo()
+      size={16}
+      style={
+        Object {
+          "lineHeight": 30,
+        }
+      }
+    >
+      switch title 3
+    </Memo()>
+  </View>
+</View>
+`;

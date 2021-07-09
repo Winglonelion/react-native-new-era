@@ -10,7 +10,7 @@ import { Svg, G, Path } from 'react-native-svg';
 import Platform from 'utils/platform';
 import CommonStyles from 'theme/CommonStyles';
 
-interface PropTypes {
+export interface PropTypes {
   data?: {
     svg?: object;
     key: any;

@@ -9,7 +9,7 @@ import ContentText from 'components/Base/Text/ContentText';
 import Colors from 'theme/colors';
 import { PressEvent } from 'types/events';
 
-interface PropTypes {
+export interface PropTypes {
   title: string;
   content?: string | number | null;
   onPress?: PressEvent;

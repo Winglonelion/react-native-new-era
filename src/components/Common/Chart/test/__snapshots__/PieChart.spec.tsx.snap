@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PieChart check snapshot should match snapshot with props 1`] = `
+<View
+  pointerEvents="box-none"
+>
+  <View
+    onLayout={[Function]}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`PieChart check snapshot should match snapshot without props and loading 1`] = `""`;
