@@ -1,19 +1,14 @@
 import { useState, useCallback } from 'react';
 import { LayoutAnimation } from 'react-native';
+import { afterInteract } from 'utils/frames';
 
 const usePaidDetailScreenLogic = () => {
   const [expandGross, setExpandGross] = useState(false);
   const toggleExpandGross = useCallback(() => {
-    // afterInteract().then(() => {
-    LayoutAnimation.configureNext({
-      duration: 250,
-      create: LayoutAnimation.create(200, 'easeInEaseOut', 'scaleY'),
-      update: LayoutAnimation.create(200, 'easeInEaseOut', 'scaleY'),
-      delete: LayoutAnimation.create(200, 'easeInEaseOut', 'scaleY'),
+    afterInteract().then(() => {
+      LayoutAnimation.easeInEaseOut();
+      setExpandGross(oldValue => !oldValue);
     });
-    // LayoutAnimation.create(200, "easeInEaseOut","scaleY");
-    setExpandGross(oldValue => !oldValue);
-    // });
   }, []);
 
   return {

@@ -76,7 +76,7 @@ const CurrentPaid: React.FC<TabProps> = memo(({ route }) => {
   const { expandGross, toggleExpandGross } = usePaidDetailScreenLogic();
   return (
     <View>
-      <ScrollView bounces={false}>
+      <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
         <Space height={20} />
         <View style={styles.overviewContainer}>
           <SalaryOverview overviewData={route.overviewData} />
