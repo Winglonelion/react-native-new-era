@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DotIndicator check snapshot should match snapshot with isActive false 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#DADFE6",
+        "borderRadius": 8,
+        "height": 8,
+        "marginHorizontal": 6,
+        "width": 8,
+      },
+      false,
+    ]
+  }
+/>
+`;
+
+exports[`DotIndicator check snapshot should match snapshot with isActive true 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#DADFE6",
+        "borderRadius": 8,
+        "height": 8,
+        "marginHorizontal": 6,
+        "width": 8,
+      },
+      Object {
+        "backgroundColor": "#000000",
+      },
+    ]
+  }
+/>
+`;

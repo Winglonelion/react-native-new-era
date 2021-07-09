@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import ContentText from 'components/Base/Text/ContentText/ContentText';
 
-interface PropTypes {
+export interface PropTypes {
   text?: string;
   onPress?: (event: GestureResponderEvent) => void;
   disabled?: boolean;

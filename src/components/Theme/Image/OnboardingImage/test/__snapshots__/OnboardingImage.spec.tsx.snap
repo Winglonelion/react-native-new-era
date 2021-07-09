@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnboardingImage check snapshot should match snapshot with props 1`] = `
+<Image
+  source={
+    Object {
+      "testUri": "../../../src/images/account_info.png",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "height": 460,
+        "resizeMode": "contain",
+        "width": 460,
+      },
+      Object {
+        "height": 30,
+        "width": 30,
+      },
+    ]
+  }
+/>
+`;

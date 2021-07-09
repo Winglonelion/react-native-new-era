@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionButton check snapshot should match snapshot with disabled 1`] = `
+<TouchableWithoutFeedback
+  disabled={true}
+>
+  <View>
+    <Memo() />
+  </View>
+</TouchableWithoutFeedback>
+`;
+
+exports[`ActionButton check snapshot should match snapshot with props 1`] = `
+<TouchableWithoutFeedback
+  disabled={false}
+  onPress={[MockFunction]}
+>
+  <View>
+    <Memo()
+      color="blue"
+    >
+      BUTTON 1
+    </Memo()>
+  </View>
+</TouchableWithoutFeedback>
+`;
+
+exports[`ActionButton check snapshot should match snapshot without props 1`] = `
+<TouchableWithoutFeedback
+  disabled={false}
+>
+  <View>
+    <Memo() />
+  </View>
+</TouchableWithoutFeedback>
+`;
