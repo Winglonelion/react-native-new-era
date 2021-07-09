@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen check snapshot should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView
+    bounces={false}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    showsVerticalScrollIndicator={false}
+  >
+    <Memo() />
+    <ForwardRef
+      delayLongPress={600}
+      disabled={false}
+      extraButtonProps={
+        Object {
+          "rippleColor": "transparent",
+        }
+      }
+      onPress={[Function]}
+    >
+      <PaidOverview
+        loading={false}
+        overviewData={
+          Object {
+            "detail": Array [
+              Object {
+                "type": "taxes",
+                "value": NaN,
+              },
+              Object {
+                "type": "benefits",
+                "value": NaN,
+              },
+              Object {
+                "type": "retirements",
+                "value": NaN,
+              },
+              Object {
+                "type": "other",
+                "value": NaN,
+              },
+              Object {
+                "type": "taxes",
+                "value": NaN,
+              },
+              Object {
+                "type": "taxes",
+                "value": NaN,
+              },
+            ],
+            "gross": NaN,
+            "hours": NaN,
+            "over_time": NaN,
+            "rate": NaN,
+            "regular": NaN,
+            "take_home": NaN,
+          }
+        }
+      />
+    </ForwardRef>
+    <Memo()
+      loading={false}
+      overviewData={Array []}
+    />
+  </ScrollView>
+</View>
+`;

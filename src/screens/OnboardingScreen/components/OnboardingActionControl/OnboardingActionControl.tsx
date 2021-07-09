@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import ActionButton from 'components/Theme/Button/ActionButton/ActionButton';
+import ActionButton from 'components/Theme/Button/ActionButton';
 import CommonStyles from 'theme/CommonStyles';
 import DotIndicator from 'components/Theme/Indicator/DotIndicator';
 import { OnboardingItemTypes } from 'screens/OnboardingScreen/OnboardingScreen.types';
-import Button from 'components/Base/Button/Button';
+import Button from 'components/Base/Button';
 import messages from './OnboardingActionControl.messages';
 import Colors from 'theme/colors';
 

@@ -1,19 +1,19 @@
 import React, { useCallback } from 'react';
 import { RefreshControl, ScrollView, View } from 'react-native';
-
-import CommonStyles from 'theme/CommonStyles';
-import DateTitle from 'components/Common/DateTitle/DateTitle';
-import PayHistoryOverView from 'components/Business/PayHistory';
-import PaidOverview from './components/PaidOverview';
-import useHomeScreenLogic from './HomeScreen.logic';
 import { observer } from 'mobx-react';
-import homeScreenStore from './HomeScreen.store';
-import { navigateTo } from 'routes/actions';
-import ROUTES from 'routes/names';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-type PropTypes = {};
 
-const HomeScreen: React.FC<PropTypes> = () => {
+import ROUTES from 'routes/names';
+import { navigateTo } from 'routes/actions';
+import CommonStyles from 'theme/CommonStyles';
+import DateTitle from 'components/Common/DateTitle';
+import PayHistoryOverView from 'components/Business/PayHistory';
+
+import PaidOverview from './components/PaidOverview';
+import homeScreenStore from './HomeScreen.store';
+import useHomeScreenLogic from './HomeScreen.logic';
+
+const HomeScreen: React.FC = () => {
   const { reloadHomeData } = useHomeScreenLogic();
 
   const onPressPaidOverview = useCallback(() => {
