@@ -3,7 +3,7 @@ import ContentLoader, { Circle } from '../index';
 import { IContentLoaderProps } from '../ContentLoader.types';
 import { LOADING_SPEED } from './config';
 
-interface PropTypes extends IContentLoaderProps {
+export interface PropTypes extends IContentLoaderProps {
   ready?: boolean;
   children: any;
   offsetX?: number;

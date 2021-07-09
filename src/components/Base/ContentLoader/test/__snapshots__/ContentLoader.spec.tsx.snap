@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentLoader check snapshot should match snapshot 1`] = `
+<NativeSvg
+  animate={true}
+  backgroundColor="#f5f6f7"
+  foregroundColor="#eee"
+  interval={0.25}
+  rtl={false}
+  speed={1.2}
+  style={Object {}}
+>
+  <View />
+</NativeSvg>
+`;
+
+exports[`ContentLoader check snapshot with props should match snapshot 1`] = `
+<NativeSvg
+  animate={true}
+  backgroundColor="#f5f6f7"
+  foregroundColor="#eee"
+  interval={0.25}
+  rtl={false}
+  speed={1.2}
+  style={Object {}}
+>
+  <View />
+</NativeSvg>
+`;

@@ -3,15 +3,16 @@ import {
   ColorValue,
   StyleSheet,
   Text,
-  TextProps,
   TextStyle,
+  StyleProp,
 } from 'react-native';
 import { FontFamily } from 'theme/CommonFonts';
 import Colors from 'theme/colors';
 
-export interface TitleTextPropTypes extends TextProps {
+export interface PropTypes {
   level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   color?: ColorValue;
+  style?: StyleProp<TextStyle>;
 }
 
 const LEVEL_STYLES: Record<string, TextStyle> = {
@@ -23,7 +24,7 @@ const LEVEL_STYLES: Record<string, TextStyle> = {
   h6: { fontSize: 10, lineHeight: 16, letterSpacing: 0.1, fontWeight: '500' },
 };
 
-const TitleText: React.FC<TitleTextPropTypes> = memo(
+const TitleText: React.FC<PropTypes> = memo(
   ({ children, level = 'h4', style, color }) => {
     return (
       <Text

@@ -3,7 +3,7 @@ import { ColorValue, StyleSheet, Text, TextProps } from 'react-native';
 import { FontFamily } from 'theme/CommonFonts';
 import Colors from 'theme/colors';
 
-interface PropTypes extends TextProps {
+export interface PropTypes extends TextProps {
   color?: ColorValue;
   size?: number;
   weight?: '100' | '400' | '500' | '600' | 'bold' | 'normal';

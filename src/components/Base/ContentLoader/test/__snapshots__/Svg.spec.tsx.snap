@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Svg check snapshot should match snapshot 1`] = `
+<Svg
+  interval={0.25}
+  preserveAspectRatio="xMidYMid meet"
+  style={Object {}}
+>
+  <Rect
+    clipPath="url(#xxxxxx-animated-diff)"
+    fill="url(#xxxxxx-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="xxxxxx-animated-diff"
+    >
+      <View />
+    </ClipPath>
+    <ForwardRef(AnimatedComponentWrapper)
+      id="xxxxxx-diff"
+      x1={"-100%"}
+      x2={"0%"}
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0.5}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={1}
+        stopColor="#f5f6f7"
+      />
+    </ForwardRef(AnimatedComponentWrapper)>
+  </Defs>
+</Svg>
+`;
+
+exports[`Svg check snapshot with props should match snapshot 1`] = `
+<Svg
+  interval={0.25}
+  preserveAspectRatio="xMidYMid meet"
+  style={Object {}}
+>
+  <Rect
+    clipPath="url(#xxxxxx-animated-diff)"
+    fill="url(#xxxxxx-diff)"
+    height="100%"
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <Defs>
+    <ClipPath
+      id="xxxxxx-animated-diff"
+    >
+      <View />
+    </ClipPath>
+    <ForwardRef(AnimatedComponentWrapper)
+      id="xxxxxx-diff"
+      x1={"-100%"}
+      x2={"0%"}
+      y1={0}
+      y2={0}
+    >
+      <Stop
+        offset={0}
+        stopColor="#f5f6f7"
+      />
+      <Stop
+        offset={0.5}
+        stopColor="#eee"
+      />
+      <Stop
+        offset={1}
+        stopColor="#f5f6f7"
+      />
+    </ForwardRef(AnimatedComponentWrapper)>
+  </Defs>
+</Svg>
+`;

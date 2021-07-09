@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Text } from 'react-native';
 
-interface PropTypes {
+export interface PropTypes {
   value?: number;
   fixed?: number;
 }

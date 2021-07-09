@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleText check snapshot should match snapshot with props 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#000000",
+        "fontFamily": "Helvetica Neue",
+        "fontSize": 14,
+      },
+      Object {
+        "fontSize": 24,
+        "fontWeight": "500",
+        "letterSpacing": 0.1,
+        "lineHeight": 30,
+      },
+      Object {
+        "color": "#EEE",
+      },
+      Object {
+        "lineHeight": 30,
+      },
+    ]
+  }
+>
+  TEST
+</Text>
+`;
+
+exports[`TitleText check snapshot should match snapshot without props 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#000000",
+        "fontFamily": "Helvetica Neue",
+        "fontSize": 14,
+      },
+      Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 0.1,
+        "lineHeight": 20,
+      },
+      undefined,
+      undefined,
+    ]
+  }
+>
+  TEST
+</Text>
+`;

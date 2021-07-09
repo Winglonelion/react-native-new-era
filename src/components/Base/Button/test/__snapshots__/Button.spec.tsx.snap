@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button check snapshot should match snapshot 1`] = `
+<Pressable
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 42,
+        "height": 42,
+        "justifyContent": "center",
+        "width": 168,
+      },
+      undefined,
+      Object {
+        "backgroundColor": "#000000",
+      },
+      undefined,
+    ]
+  }
+/>
+`;

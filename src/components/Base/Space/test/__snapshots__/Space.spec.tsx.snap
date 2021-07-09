@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Space check snapshot should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "height": 10,
+      "width": 0,
+    }
+  }
+/>
+`;
+
+exports[`Space check snapshot should match snapshot with props 1`] = `
+<View
+  style={
+    Object {
+      "height": 10,
+      "width": 10,
+    }
+  }
+/>
+`;

@@ -9,7 +9,7 @@ const SUPPORTED_ICON = {
   FontAwesome5,
 };
 
-interface PropTypes {
+export interface PropTypes {
   checked?: boolean;
   tintColor?: ColorValue;
   checkedIconName?: string;

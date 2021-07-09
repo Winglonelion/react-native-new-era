@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentLoaderLine check snapshot ContentLoaderLine should match snapshot with loadingHeight and width 1`] = `
+<ContentLoader
+  backgroundColor="#f3f3f3"
+  foregroundColor="#ecebeb"
+  height={100}
+  speed={1.5}
+  viewBox="0 0 100 100"
+  width={100}
+>
+  <Rect
+    height={100}
+    rx={4}
+    ry={4}
+    width={100}
+    x={0}
+    y={0}
+  />
+</ContentLoader>
+`;
+
+exports[`ContentLoaderLine check snapshot ContentLoaderLine should match snapshot with ready 1`] = `<View />`;
+
+exports[`ContentLoaderLine check snapshot should match snapshot 1`] = `
+<ContentLoader
+  backgroundColor="#f3f3f3"
+  foregroundColor="#ecebeb"
+  height={30}
+  speed={1.5}
+  viewBox="0 0 100 30"
+  width={100}
+>
+  <Rect
+    height={30}
+    rx={4}
+    ry={4}
+    width={100}
+    x={0}
+    y={0}
+  />
+</ContentLoader>
+`;

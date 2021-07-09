@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoneyValue check snapshot should match snapshot with props 1`] = `
+<Text>
+  $90000.00
+</Text>
+`;
+
+exports[`MoneyValue check snapshot should match snapshot without props 1`] = `""`;

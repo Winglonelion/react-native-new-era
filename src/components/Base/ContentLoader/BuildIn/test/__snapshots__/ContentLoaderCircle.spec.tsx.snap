@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentLoaderCircle check snapshot ContentLoaderCircle should match snapshot with offsets 1`] = `
+<ContentLoader
+  backgroundColor="#f3f3f3"
+  foregroundColor="#ecebeb"
+  height={100}
+  speed={1.5}
+  viewBox="0 0 100 100"
+  width={100}
+>
+  <Circle
+    cx={100}
+    cy={100}
+    r={15}
+  />
+</ContentLoader>
+`;
+
+exports[`ContentLoaderCircle check snapshot ContentLoaderCircle should match snapshot with ready 1`] = `<View />`;
+
+exports[`ContentLoaderCircle check snapshot should match snapshot 1`] = `
+<ContentLoader
+  backgroundColor="#f3f3f3"
+  foregroundColor="#ecebeb"
+  height={100}
+  speed={1.5}
+  viewBox="0 0 100 100"
+  width={100}
+>
+  <Circle
+    cx={15}
+    cy={15}
+    r={15}
+  />
+</ContentLoader>
+`;

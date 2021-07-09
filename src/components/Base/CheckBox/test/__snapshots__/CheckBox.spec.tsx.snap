@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox check snapshot checked should match snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": 20,
+        "justifyContent": "center",
+        "width": 20,
+      },
+      Object {
+        "backgroundColor": "#FF894D",
+      },
+    ]
+  }
+>
+  <IconClass
+    brand={false}
+    color="#FFFFFF"
+    light={false}
+    name="check"
+    regular={false}
+    size={14}
+    solid={false}
+  />
+</View>
+`;
+
+exports[`CheckBox check snapshot should match snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": 20,
+        "justifyContent": "center",
+        "width": 20,
+      },
+      Object {
+        "backgroundColor": "#C4C1C0",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "height": 16,
+        "width": 16,
+      }
+    }
+  />
+</View>
+`;

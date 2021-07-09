@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View } from 'react-native';
 
-interface PropTypes {
+export interface PropTypes {
   height?: number;
   width?: number;
 }

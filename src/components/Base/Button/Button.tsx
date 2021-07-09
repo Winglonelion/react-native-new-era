@@ -11,7 +11,7 @@ import {
 
 import Colors from 'theme/colors';
 
-interface PropTypes {
+export interface PropTypes {
   loading?: boolean;
   disabled?: boolean;
   text?: string;
