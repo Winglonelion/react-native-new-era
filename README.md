@@ -22,6 +22,74 @@ In this project, i wanna do many things. But time is limited. So, some features 
 - Commit lint using husky and commit-lint
 - Base on my Uncle Bob "The Clean Code" spirit.
 
+
+## So, What fun in this project?
+
+
+Hm, Basically, we met many react-native projects with Redux and flux architecture with SLOGAN "Single resource of trust". It's good but spent more time learning, practice and mastered. I wanna build a project with a structure easy to approach test, and maintain base on critical point: the performance.
+
+- Mobx approach with provider pattern (in TextDataUpdateScreen)
+- Native stack navigation using `react-native-screens` and `react-navigation`
+- Reanimated of god (But god said it have error now  :)) )
+- SVG Chart and d3-shape
+- Ultra fast storage MMKV supported keychain encrypt.
+
+Well, many things to do with it. Hope it will more fun future.
+
+
+## Project Structure
+
+```
+src
+
+├── api     // API and config for HTTP client
+│   ├── notification
+│   ├── paid
+│   ├── profile
+│   └── session
+├── app     // declare App main module and wrapper
+├── components
+│   ├── Base
+│   ├── Business
+│   ├── Common
+│   └── Theme
+├── constants
+├── data    // domain state of app here
+│   ├── session
+│   └── user
+├── images
+├── mock    // mocks implementation
+│   ├── dump
+│   └── networking
+├── modals  // modals components
+│   └── SelectMaritalStatus
+├── routes  // config for navigation
+│   ├── actions
+│   ├── drawer
+│   ├── stacks
+│   └── tabs
+├── screens // screen display in app
+│   ├── FeedbackScreen
+│   ├── HomeScreen
+│   ├── LoginScreen
+│   ├── NotificationDetailScreen
+│   ├── NotificationScreen
+│   ├── OnboardingScreen
+│   ├── PaidDetailScreen
+│   ├── PaidHistoryScreen
+│   ├── PersonalInfoScreen
+│   ├── ProfileScreen
+│   ├── SettingScreen
+│   └── TextDataUpdateScreen
+├── theme   // theme and styles config
+├── types   // types scripts type
+└── utils   // utilities function
+    ├── business
+    └── error-handler
+
+44 directories
+```
+
 ## Get Starts
 
 
