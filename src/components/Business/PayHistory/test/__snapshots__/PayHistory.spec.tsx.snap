@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PayHistory check snapshot should match snapshot with props 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+      "paddingTop": 2,
+      "paddingVertical": 8,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#F2F7F7",
+        "borderRadius": 8,
+        "elevation": 2,
+        "paddingBottom": 40,
+        "paddingHorizontal": 24,
+        "paddingRight": 20,
+        "paddingVertical": 25,
+        "shadowColor": "rgba(45, 49, 53, 0.18)",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 2,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "height": 40,
+          "justifyContent": "space-between",
+          "marginBottom": 5,
+        }
+      }
+    >
+      <Memo()
+        level="h2"
+      >
+        Pay History
+      </Memo()>
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/images/chevron_right_corban.png",
+          }
+        }
+        style={
+          Object {
+            "height": 24,
+            "resizeMode": "contain",
+            "width": 24,
+          }
+        }
+      />
+    </View>
+    <Memo()
+      item={
+        Object {
+          "date": "2021-01-31",
+          "gross": 2400,
+          "hours": 180,
+          "take_home": 2200.01,
+        }
+      }
+      key="2021-01-31"
+    />
+    <Memo()
+      item={
+        Object {
+          "date": "2021-02-28",
+          "gross": 2400,
+          "hours": 180,
+          "take_home": 2200.01,
+        }
+      }
+      key="2021-02-28"
+    />
+    <Memo()
+      item={
+        Object {
+          "date": "2021-01-15",
+          "gross": 2400,
+          "hours": 180,
+          "take_home": 2200.01,
+        }
+      }
+      key="2021-01-15"
+    />
+  </View>
+</View>
+`;
+
+exports[`PayHistory check snapshot should match snapshot without props and loading 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+      "paddingTop": 2,
+      "paddingVertical": 8,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#F2F7F7",
+        "borderRadius": 8,
+        "elevation": 2,
+        "paddingBottom": 40,
+        "paddingHorizontal": 24,
+        "paddingRight": 20,
+        "paddingVertical": 25,
+        "shadowColor": "rgba(45, 49, 53, 0.18)",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 2,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "height": 40,
+          "justifyContent": "space-between",
+          "marginBottom": 5,
+        }
+      }
+    >
+      <Memo()
+        level="h2"
+      >
+        Pay History
+      </Memo()>
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/images/chevron_right_corban.png",
+          }
+        }
+        style={
+          Object {
+            "height": 24,
+            "resizeMode": "contain",
+            "width": 24,
+          }
+        }
+      />
+    </View>
+    <Memo()
+      key="place_holder_1"
+    />
+    <Memo()
+      key="place_holder_2"
+    />
+    <Memo()
+      key="place_holder_3"
+    />
+  </View>
+</View>
+`;

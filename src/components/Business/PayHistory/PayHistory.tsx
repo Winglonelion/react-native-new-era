@@ -1,49 +1,48 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import TitleText from 'components/Base/Text/TitleText/TitleText';
-import messages from './PayHistory.messages';
+
 import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
-import PayHistoryItem from '../PayHistoryItem/PayHistoryItem';
-import { observer } from 'mobx-react';
+import TitleText from 'components/Base/Text/TitleText';
 import { GetPaidHistoryOverViewResponse } from 'api/paid/paid.api.types';
+import PayHistoryItem from '../PayHistoryItem';
+import messages from './PayHistory.messages';
 
-interface PropTypes {
+export interface PropTypes {
   loading?: boolean;
   overviewData?: GetPaidHistoryOverViewResponse;
 }
 
-const PayHistoryOverView: React.FC<PropTypes> = ({
-  loading,
-  overviewData: overviewData,
-}) => {
-  return (
-    <View style={styles.shadowBox}>
-      <View style={styles.container}>
-        {/* title row */}
-        <View style={styles.titleRow}>
-          <TitleText level="h2">{messages.pay_history}</TitleText>
-          <Image
-            source={require('images/chevron_right_corban.png')}
-            style={styles.icon}
-          />
+const PayHistoryOverView: React.FC<PropTypes> = memo(
+  ({ loading, overviewData: overviewData }) => {
+    return (
+      <View style={styles.shadowBox}>
+        <View style={styles.container}>
+          {/* title row */}
+          <View style={styles.titleRow}>
+            <TitleText level="h2">{messages.pay_history}</TitleText>
+            <Image
+              source={require('images/chevron_right_corban.png')}
+              style={styles.icon}
+            />
+          </View>
+          {loading ? (
+            <>
+              <PayHistoryItem key="place_holder_1" />
+              <PayHistoryItem key="place_holder_2" />
+              <PayHistoryItem key="place_holder_3" />
+            </>
+          ) : (
+            overviewData?.map(item => (
+              <PayHistoryItem key={item.date} item={item} />
+            ))
+          )}
+          {/* contents */}
         </View>
-        {loading ? (
-          <>
-            <PayHistoryItem key="place_holder_1" />
-            <PayHistoryItem key="place_holder_2" />
-            <PayHistoryItem key="place_holder_3" />
-          </>
-        ) : (
-          overviewData?.map(item => (
-            <PayHistoryItem key={item.date} item={item} />
-          ))
-        )}
-        {/* contents */}
       </View>
-    </View>
-  );
-};
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   shadowBox: {
@@ -75,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default observer(PayHistoryOverView);
+export default PayHistoryOverView;

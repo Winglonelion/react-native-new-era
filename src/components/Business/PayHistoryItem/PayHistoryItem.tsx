@@ -1,15 +1,16 @@
 import React, { memo } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import DateTitle from 'components/Common/DateTitle/DateTitle';
-import Space from 'components/Base/Space/Space';
-import TitleText from 'components/Base/Text/TitleText/TitleText';
-import messages from './PayHistory.messages';
-import MoneyValue from 'components/Base/Text/MoneyValue/';
-import ContentText from 'components/Base/Text/ContentText/ContentText';
-import Colors from 'theme/colors';
-import ContentLoaderLine from 'components/Base/ContentLoader/BuildIn/ContentLoaderLine';
 
-interface PropTypes {
+import Colors from 'theme/colors';
+import Space from 'components/Base/Space/Space';
+import DateTitle from 'components/Common/DateTitle';
+import TitleText from 'components/Base/Text/TitleText';
+import MoneyValue from 'components/Base/Text/MoneyValue/';
+import ContentText from 'components/Base/Text/ContentText';
+import ContentLoaderLine from 'components/Base/ContentLoader/BuildIn/ContentLoaderLine';
+import messages from './PayHistoryItem.messages';
+
+export interface PropTypes {
   item?: {
     date: string;
     take_home: number;

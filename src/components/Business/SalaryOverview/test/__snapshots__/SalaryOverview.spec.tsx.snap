@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SalaryOverview check snapshot should match snapshot with props 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "paddingHorizontal": 6,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginBottom": 8,
+        }
+      }
+    >
+      <Memo()
+        color="#9C9079"
+        level="h5"
+      >
+        Take Home
+      </Memo()>
+      <Memo()
+        height={30}
+        ready={true}
+        width={150}
+      >
+        <Memo()
+          level="h1"
+        >
+          <Memo()
+            value={1000}
+          />
+        </Memo()>
+      </Memo()>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 8,
+        }
+      }
+    >
+      <Memo()
+        color="#9C9079"
+        level="h5"
+      >
+        Gross
+      </Memo()>
+      <Memo()
+        height={22}
+        ready={true}
+        width={150}
+      >
+        <Memo()
+          level="h3"
+        >
+          <Memo()
+            value={1800}
+          />
+        </Memo()>
+      </Memo()>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "marginBottom": 8,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Memo()
+          color="#9C9079"
+          level="h5"
+        >
+          Hours
+        </Memo()>
+        <Memo()
+          height={22}
+          ready={true}
+          width={76}
+        >
+          <Memo()
+            level="h3"
+          >
+            80
+          </Memo()>
+        </Memo()>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Memo()
+          color="#9C9079"
+          level="h5"
+        >
+          Rate
+        </Memo()>
+        <Memo()
+          height={22}
+          ready={true}
+          width={76}
+        >
+          <Memo()
+            level="h3"
+          >
+            <Memo()
+              value={30}
+            />
+          </Memo()>
+        </Memo()>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Memo()
+      height={150}
+      ready={true}
+      size={150}
+      width={150}
+    >
+      <PieChart
+        data={
+          Array [
+            Object {
+              "key": "Taxes",
+              "svg": Object {
+                "fill": "#77569E",
+              },
+              "value": 357.74,
+            },
+            Object {
+              "key": "Benefits",
+              "svg": Object {
+                "fill": "#4FA5AD",
+              },
+              "value": 73,
+            },
+            Object {
+              "key": "Retirements",
+              "svg": Object {
+                "fill": "#E28080",
+              },
+              "value": 40,
+            },
+            Object {
+              "key": "Other",
+              "svg": Object {
+                "fill": "#C0CAB8",
+              },
+              "value": 40,
+            },
+            Object {
+              "key": "Take_home",
+              "svg": Object {
+                "fill": "#FF894D",
+              },
+              "value": 1000,
+            },
+          ]
+        }
+        endAngle={6.283185307179586}
+        height={100}
+        innerRadius="65%"
+        labelRadius="50%"
+        outerRadius="100%"
+        padAngle={0}
+        sort={[Function]}
+        startAngle={-20}
+        style={
+          Object {
+            "height": 150,
+          }
+        }
+        valueAccessor={[Function]}
+        width={100}
+      />
+    </Memo()>
+  </View>
+</View>
+`;
+
+exports[`SalaryOverview check snapshot should match snapshot without props and loading 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "paddingHorizontal": 6,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginBottom": 8,
+        }
+      }
+    >
+      <Memo()
+        color="#9C9079"
+        level="h5"
+      >
+        Take Home
+      </Memo()>
+      <Memo()
+        height={30}
+        ready={false}
+        width={150}
+      >
+        <Memo()
+          level="h1"
+        >
+          <Memo() />
+        </Memo()>
+      </Memo()>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 8,
+        }
+      }
+    >
+      <Memo()
+        color="#9C9079"
+        level="h5"
+      >
+        Gross
+      </Memo()>
+      <Memo()
+        height={22}
+        ready={false}
+        width={150}
+      >
+        <Memo()
+          level="h3"
+        >
+          <Memo() />
+        </Memo()>
+      </Memo()>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "marginBottom": 8,
+          },
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Memo()
+          color="#9C9079"
+          level="h5"
+        >
+          Hours
+        </Memo()>
+        <Memo()
+          height={22}
+          ready={false}
+          width={76}
+        >
+          <Memo()
+            level="h3"
+          />
+        </Memo()>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Memo()
+          color="#9C9079"
+          level="h5"
+        >
+          Rate
+        </Memo()>
+        <Memo()
+          height={22}
+          ready={false}
+          width={76}
+        >
+          <Memo()
+            level="h3"
+          >
+            <Memo() />
+          </Memo()>
+        </Memo()>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Memo()
+      height={150}
+      ready={false}
+      size={150}
+      width={150}
+    >
+      <PieChart
+        endAngle={6.283185307179586}
+        height={100}
+        innerRadius="65%"
+        labelRadius="50%"
+        outerRadius="100%"
+        padAngle={0}
+        sort={[Function]}
+        startAngle={-20}
+        style={
+          Object {
+            "height": 150,
+          }
+        }
+        valueAccessor={[Function]}
+        width={100}
+      />
+    </Memo()>
+  </View>
+</View>
+`;

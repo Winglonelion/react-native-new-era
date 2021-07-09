@@ -1,18 +1,20 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import TitleText from 'components/Base/Text/TitleText/TitleText';
-import messages from './SalaryOverview.messages';
+import { capitalize } from 'lodash';
+
 import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
-import PieChart from 'components/Common/Chart/PieChart';
-import ContentLoaderLine from 'components/Base/ContentLoader/BuildIn/ContentLoaderLine';
-import MoneyValue from 'components/Base/Text/MoneyValue/MoneyValue';
-import ContentLoaderCircle from 'components/Base/ContentLoader/BuildIn/ContentLoaderCircle';
-import { GetPaidOverViewResponse } from 'api/paid/paid.api.types';
-import { capitalize } from 'lodash';
 import { mapPieColor } from 'utils/business/chart';
+import { GetPaidOverViewResponse } from 'api/paid/paid.api.types';
 
-interface PropTypes {
+import TitleText from 'components/Base/Text/TitleText';
+import PieChart from 'components/Common/Chart/PieChart';
+import MoneyValue from 'components/Base/Text/MoneyValue/MoneyValue';
+import ContentLoaderLine from 'components/Base/ContentLoader/BuildIn/ContentLoaderLine';
+import ContentLoaderCircle from 'components/Base/ContentLoader/BuildIn/ContentLoaderCircle';
+import messages from './SalaryOverview.messages';
+
+export interface PropTypes {
   overviewData?: GetPaidOverViewResponse;
   loading?: boolean;
 }
