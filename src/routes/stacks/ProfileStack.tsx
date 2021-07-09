@@ -8,16 +8,21 @@ import Colors from 'theme/colors';
 import CommonStyles from 'theme/CommonStyles';
 import ProfileScreen from 'screens/ProfileScreen';
 import MenuButton from './components/MenuButton';
+import {
+  HEADER_TRANSLUCENT,
+  CONTENT_STYLE,
+  SAFE_AREA_EDGES,
+  STACK_ANIMATION,
+} from './config';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
 const ProfileStack = () => {
   return (
-    <SafeAreaView
-      edges={['left', 'top', 'right']}
-      style={CommonStyles.container}>
+    <SafeAreaView edges={SAFE_AREA_EDGES} style={CommonStyles.container}>
       <Stack.Navigator
         screenOptions={{
+          stackAnimation: STACK_ANIMATION,
           gestureEnabled: true,
           headerBackTitleVisible: false,
           headerHideShadow: true,
@@ -26,7 +31,9 @@ const ProfileStack = () => {
         <Stack.Screen
           options={{
             title: 'Profile',
+            headerTranslucent: HEADER_TRANSLUCENT,
             headerLeft: MenuButton,
+            contentStyle: { ...CONTENT_STYLE },
           }}
           name={ROUTES.PROFILE_SCREEN}
           component={ProfileScreen}

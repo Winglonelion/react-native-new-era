@@ -81,7 +81,7 @@ yarn test <Component Name>
 - [x] Setup unit test (coverage 30%)
 - [x] Add commit lint
 - [ ] Revoke token when logout
-- [ ] Optimize for Android Layout
+- [x] Optimize for Android Layout
 - [ ] Fix Reanimated problems with Drawer
 - [ ] Fix Reanimated rise crash when use useSharedValue
 - [ ] Implement Collapsible menu using Reanimated (Current using Layout Animation)

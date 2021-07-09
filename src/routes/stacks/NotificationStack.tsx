@@ -10,16 +10,21 @@ import CommonStyles from 'theme/CommonStyles';
 import NotificationScreen from 'screens/NotificationScreen';
 import NotificationDetailScreen from 'screens/NotificationDetailScreen';
 import MenuButton from './components/MenuButton';
+import {
+  HEADER_TRANSLUCENT,
+  CONTENT_STYLE,
+  SAFE_AREA_EDGES,
+  STACK_ANIMATION,
+} from './config';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
 const NotificationStack = () => {
   return (
-    <SafeAreaView
-      edges={['left', 'top', 'right']}
-      style={CommonStyles.container}>
+    <SafeAreaView edges={SAFE_AREA_EDGES} style={CommonStyles.container}>
       <Stack.Navigator
         screenOptions={{
+          stackAnimation: STACK_ANIMATION,
           gestureEnabled: true,
           headerBackTitleVisible: false,
           headerHideShadow: true,
@@ -29,6 +34,8 @@ const NotificationStack = () => {
           options={{
             title: 'Messages',
             headerLeft: MenuButton,
+            headerTranslucent: HEADER_TRANSLUCENT,
+            contentStyle: { ...CONTENT_STYLE },
           }}
           name={ROUTES.NOTIFICATION_SCREEN}
           component={NotificationScreen}

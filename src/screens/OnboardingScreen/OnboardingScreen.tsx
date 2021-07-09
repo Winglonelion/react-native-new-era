@@ -18,6 +18,7 @@ import styles from './OnboardingScreen.styles';
 import useLogic from './OnboardingScreen.logic';
 import OnboardingItem from './components/OnboardingItem';
 import OnboardingActionControl from './components/OnboardingActionControl';
+import Platform from 'utils/platform';
 
 type PropTypes = {};
 
@@ -38,6 +39,7 @@ const OnboardingScreen: React.FC<PropTypes> = () => {
         ),
         DATA.length,
       );
+      // console.log('onScrollEnd', pageNumber);
       setIndex(pageNumber);
     },
     [setIndex],
@@ -62,7 +64,8 @@ const OnboardingScreen: React.FC<PropTypes> = () => {
             horizontal
             pagingEnabled
             data={DATA}
-            onMomentumScrollEnd={onScrollEnd}
+            onMomentumScrollEnd={Platform.isIos ? onScrollEnd : undefined}
+            onScroll={Platform.isAndroid ? onScrollEnd : undefined}
             keyExtractor={keyExtractor}
             showsHorizontalScrollIndicator={false}
             renderItem={renderItem}

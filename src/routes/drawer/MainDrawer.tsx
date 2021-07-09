@@ -4,8 +4,6 @@ import CustomDrawerContent from './DrawerContent';
 import AuthorizedStack from 'routes/stacks/AuthorizedStack';
 import ROUTES from 'routes/names';
 import Colors from 'theme/colors';
-// import SettingScreen from 'screens/SettingScreen';
-// import FeedbackScreen from 'screens/FeedbackScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,8 +25,6 @@ const MainDrawer = () => {
         name={ROUTES.AUTHORIZED_STACK}
         component={AuthorizedStack}
       />
-      {/* <Drawer.Screen name={ROUTES.SETTING_SCREEN} component={SettingScreen} />
-      <Drawer.Screen name={ROUTES.FEEDBACK_SCREEN} component={FeedbackScreen} /> */}
     </Drawer.Navigator>
   );
 };

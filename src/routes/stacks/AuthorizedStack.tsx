@@ -14,6 +14,7 @@ import PaidDetailScreen from 'screens/PaidDetailScreen';
 import PersonalInfoScreen from 'screens/PersonalInfoScreen';
 import TextDataUpdateScreen from 'screens/TextDataUpdateScreen';
 import TextDataOptions from 'screens/TextDataUpdateScreen/components/TextDataOptions';
+import { STACK_ANIMATION } from './config';
 
 const Stack = createNativeStackNavigator<Record<string, never>>();
 
@@ -27,6 +28,7 @@ const AuthorizedStack = () => {
       }
       screenOptions={{
         gestureEnabled: false,
+        stackAnimation: STACK_ANIMATION,
         // gestureEnabled: true,
         headerTintColor: Colors.lightBrown,
         headerBackTitleVisible: false,
