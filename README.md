@@ -1,6 +1,6 @@
-# Hello, this Project is Frontend path of Tushare
+# Hello, this Project is a fun, awesome palace
 
-A simple youtube videos sharing website.
+Vensure Mobile App base on my test in MyLong.
 
 In this project, i wanna do many things. But time is limited. So, some features a not yet completed. (Will be list in Check list)
 
@@ -10,78 +10,83 @@ In this project, i wanna do many things. But time is limited. So, some features 
 -----
 
 ## Core Technologies
-- NextJS
-- TailwindCSS
-- Styled Components
-- Authorizing with NextAuth
+- React Native 0.64.2
+- React Navigation 5
+- MobX (Awesome state manager, bye bye Redux)
+- Reanimated 2 (2.2.0 still meet trouble with React Native right now, i will work with community to find a way)
+- MMKV storage
+- react-native-svg and d3-shape
 
 ## Conventions
-- Code lint by Eslint
-- Code automation format using Prettier
-- Commit lint using husky and commit-lint (not yet implement)
+- Code lint and auto format by Eslint with Prettier plugin
+- Commit lint using husky and commit-lint
+- Base on my Uncle Bob "The Clean Code" spirit.
 
 ## Get Starts
 
-1. First, complete setup & start your backend. If you just wanna test frontend. Use environment info from `.env.sample`
 
-1. Create `.env.local` file. Copy content from `.env.dev`. Then, fill with your backend information. To get client ID and Client Scret, on your backend `rails console` run
+> Before start please ensure your environment ready for build and develop react native Application.
+>
 
-```ruby
-# client_id of the application
-Doorkeeper::Application.find_by(name: "React").uid
 
-# client_secret of the application
-Doorkeeper::Application.find_by(name: "React").secret
-```
+### In Your project root folder, open terminal and get start!
 
-3. Start your frontend server
+1. Install Dependencies
 ```bash
 # install dependencies
 yarn
 
+# install cocoapods
+cd ios
+pod install
+```
+
+2. Start your Application
+```bash
 # start dev server
-yarn dev
-```
-Frontend server will start at port 3001, open browser and navigate to address http://localhost:3001 to start test website.
+yarn start
 
-4. Analyze your bundle
-```bash
-# Analyze application both on NextJs server side and browser side
-yarn analyze
-# Analyze NextJS server side bundle
-yarn analyze:server
-# Analyze NextJS browser side bundle
-yarn analyze:browser
+# run ios version in Debug mode
+yarn ios
 ```
 
-5. Unit Testing
+3. Test Application with Enzyme
 
-This project using `jest` and `enzyme` to unit testing.
+    This project using `jest` and `enzyme` to unit testing, with help of `testing-library`.
 ```bash
-# run test using jest
+# test overall project
 yarn test
-# run test and collect coverage
-yarn test:coverage
-# open coverage report file
+# test overall with coverage report
+yarn test --coverage
 yarn open:coverage
+# test single Component
+yarn test <Component Name>
 ```
+
 ## Check list
 
-- [x] login UI
-- [x] register UI
-- [x] header / footer UI
-- [x] home UI
-- [x] infinity list
-- [x] share Video UI
-- [x] auth config
-- [x] build contextual modal navigation system config
-- [x] Setup unit test
-- [ ] responsive for contextual modal
-- [ ] revoke token when logout
-- [ ] handle 401 error
-- [ ] handle refresh token at API side
-- [ ] handle refresh token
-- [ ] optimize lighthouse
-- [ ] Add commit lint
+- [x] Login Screen
+- [x] Onboarding Screen
+- [x] Home Screen
+- [x] Svg and d3 Pie Chart
+- [x] Profile Screen
+- [x] Notification Screen
+- [x] Setting Screen
+- [x] Paid Detail Screen
+- [ ] Paid History Screen
+- [x] Drawer Navigation
+- [x] Personal Info Screen
+- [x] Edit Text (Utility Screen) Use for simple Text data like Nick Name in Personal Info. Can be reuse for another.
+- [x] Notification Detail Screen
+- [x] Setup unit test (coverage 30%)
+- [x] Add commit lint
+- [ ] Revoke token when logout
+- [ ] Optimize for Android Layout
+- [ ] Fix Reanimated problems with Drawer
+- [ ] Fix Reanimated rise crash when use useSharedValue
+- [ ] Implement Collapsible menu using Reanimated (Current using Layout Animation)
+- [ ] Implement Reanimated Chart
 
+
+## Again thanks sifu Long to bring me a very interesting project. I be attracted with this very much. <3
 
