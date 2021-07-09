@@ -11,7 +11,7 @@ import com.swmansion.reanimated.ReanimatedJSIModulePackage; // <-- ADD THIS
 import com.ammarahmed.mmkv.RNMMKVModule; // <-- ADD THIS
 
 // public class RNMMKVJSIModulePackage implements JSIModulePackage { // Replace implements JSIModulePackage with extends ReanimatedJSIModulePackage
-public class RNMMKVJSIModulePackage extends ReanimatedJSIModulePackage { // Replace implements JSIModulePackage with extends ReanimatedJSIModulePackage
+public class CustomMMKVJSIModulePackage extends ReanimatedJSIModulePackage { // Replace implements JSIModulePackage with extends ReanimatedJSIModulePackage
     @Override
     public List<JSIModuleSpec> getJSIModules(ReactApplicationContext reactApplicationContext, JavaScriptContextHolder jsContext) {
         super.getJSIModules(reactApplicationContext, jsContext); // <-- ADD THIS
