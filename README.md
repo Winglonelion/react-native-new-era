@@ -155,5 +155,4 @@ yarn test <Component Name>
 - [ ] Implement Reanimated Chart
 
 
-## Again thanks sifu Long to bring me a very interesting project. I be attracted with this very much. <3
 
